@@ -95,13 +95,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
             <Link
               href={heroSlides[activeSlide].ctaLink}
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#00C2FF]/20 backdrop-blur-md border-2 border-[#00C2FF]/70 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base transition-all duration-300 gap-2 shadow-lg hover:bg-[#00C2FF] hover:text-[#0B1B4F] hover:border-[#00C2FF] hover:shadow-[0_0_30px_rgba(0,194,255,0.6)] hover:scale-105"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#00C2FF] text-[#0B1B4F] font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:shadow-xl transition-all duration-300 gap-2 shadow-lg"
             >
               {heroSlides[activeSlide].ctaText} <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-white/10 backdrop-blur-md border-2 border-white/40 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base transition-all duration-300 text-center shadow-lg hover:bg-white hover:text-[#0B1B4F] hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-105"
+              className="w-full sm:w-auto inline-flex items-center justify-center border-2 border-white/80 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:text-[#0B1B4F] transition-all duration-300 text-center shadow-lg"
             >
               Contact Us
             </Link>
@@ -136,16 +136,25 @@ export default function HomePage() {
 
       {/* ─── STATS STRIP ─── */}
       <section className="border-b border-slate-200 bg-[#0B1B4F]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-white/10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4">
           {[
             { value: "100+", label: "Turnkey Projects" },
             { value: "4+",   label: "States & Middle East" },
             { value: "RDSO", label: "Approved Welding" },
             { value: "100%", label: "On-Time Execution" },
-          ].map((s) => (
-            <div key={s.label} className="py-5 sm:py-6 px-4 sm:px-6 text-center">
-              <div className="text-xl sm:text-3xl font-bold text-[#00C2FF]">{s.value}</div>
-              <div className="text-[11px] sm:text-xs text-white/60 mt-1 font-medium">{s.label}</div>
+          ].map((s, idx) => (
+            <div
+              key={s.label}
+              className={`py-6 px-4 sm:px-6 text-center ${
+                idx % 2 === 0 ? "border-r border-white/10" : ""
+              } ${
+                idx < 2 ? "border-b border-white/10 md:border-b-0" : ""
+              } ${
+                idx < 3 ? "md:border-r md:border-white/10" : "md:border-r-0"
+              }`}
+            >
+              <div className="text-2xl sm:text-3xl font-bold text-[#00C2FF]">{s.value}</div>
+              <div className="text-xs sm:text-xs text-white/70 mt-1 font-medium">{s.label}</div>
             </div>
           ))}
         </div>
