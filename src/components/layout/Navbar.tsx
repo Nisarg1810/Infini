@@ -60,12 +60,21 @@ export default function Navbar() {
       <nav className="bg-white shadow-md border-b border-slate-100 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto relative flex items-center justify-between h-[88px] sm:h-[96px] lg:h-[84px] gap-4 px-1 sm:px-0">
 
+          {/* Mobile Menu Toggle — Left Corner */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden text-[#0B1B4F] hover:text-[#00C2FF] p-2 transition-colors z-20"
+            aria-label="Toggle Navigation"
+          >
+            {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+          </button>
+
           {/* Logo — Big and Centered on Mobile, Static Left on Desktop */}
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center shrink-0 group z-10">
             <img
               src="/images/logo.jpg"
               alt="INFINI Infrastructure & Engineering Pvt. Ltd."
-              className="h-16 xs:h-20 sm:h-24 lg:h-20 w-auto max-w-[270px] xs:max-w-[330px] sm:max-w-[420px] lg:max-w-[400px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-16 xs:h-20 sm:h-24 lg:h-20 w-auto max-w-[240px] xs:max-w-[300px] sm:max-w-[400px] lg:max-w-[400px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </Link>
 
@@ -197,23 +206,14 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* CTA + Mobile Toggle */}
-          <div className="ml-auto lg:ml-0 flex items-center gap-3 shrink-0">
+          {/* CTA Button (Desktop) */}
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             <Link
               href="/contact"
-              className="hidden lg:inline-flex items-center gap-1.5 bg-[#0B1B4F] text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full shadow-md hover:bg-[#00C2FF] hover:text-[#0B1B4F] transition-all duration-300"
+              className="inline-flex items-center gap-1.5 bg-[#0B1B4F] text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full shadow-md hover:bg-[#00C2FF] hover:text-[#0B1B4F] transition-all duration-300"
             >
               Contact Us
             </Link>
-
-            {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden text-[#0B1B4F] hover:text-[#00C2FF] p-2 transition-colors"
-              aria-label="Toggle Navigation"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </div>
 
         </div>
