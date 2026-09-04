@@ -2,257 +2,267 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { 
-  Menu, 
-  X, 
-  ChevronDown, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Wrench, 
-  HardHat, 
-  Ship, 
-  Info, 
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Phone,
+  Mail,
+  Wrench,
+  HardHat,
+  Ship,
+  Sparkles,
   Award,
-  Sparkles
+  Info,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
 } from "lucide-react";
+
+const mechanicalLinks = [
+  { label: "Crane Rail Fixtures", href: "/sectors/mechanical/crane-rail-fixtures" },
+  { label: "Anti Corrosion Coating", href: "/sectors/mechanical/anti-corrosion-coating" },
+  { label: "Steel & Aluminium Fabrication", href: "/sectors/mechanical/steel-aluminium-fabrication" },
+  { label: "Land & Rail Survey", href: "/sectors/mechanical/land-rail-survey" },
+  { label: "Thermit Rail Welding", href: "/sectors/mechanical/rdso-thermit-welding" },
+  { label: "Railway Siding Works", href: "/sectors/mechanical/railway-siding-works" },
+];
+
+const civilLinks = [
+  { label: "Jetty Works & Repairs", href: "/sectors/civil/jetty-works-repairs" },
+  { label: "Paver Block Works", href: "/sectors/civil/paver-block-works" },
+  { label: "Drainage Works", href: "/sectors/civil/drainage-works" },
+  { label: "Mass Concrete Works", href: "/sectors/civil/mass-concrete-works" },
+  { label: "RCC & PCC Girders", href: "/sectors/civil/rcc-pcc-girders" },
+];
+
+const tourismLinks = [
+  { label: "Floating Docks & Jetties", href: "/sectors/tourism/floating-docks-jetties" },
+  { label: "Seaplane Platforms", href: "/sectors/tourism/seaplane-platforms" },
+];
+
+const aboutLinks = [
+  { label: "Vision, Mission & Core Values", href: "/about/vision-mission", icon: <Sparkles className="w-4 h-4 text-[#00C2FF]" /> },
+  { label: "Why INFINI Infra", href: "/about/why-infini", icon: <Award className="w-4 h-4 text-[#22C55E]" /> },
+  { label: "Media, Press & News", href: "/about/media-news", icon: <Info className="w-4 h-4 text-[#F97316]" /> },
+];
+
+type DropdownKey = "about" | "mechanical" | "civil" | "tourism" | null;
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [sectorsDropdownOpen, setSectorsDropdownOpen] = useState(false);
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<DropdownKey>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+
+  const handleMouseEnter = (key: DropdownKey) => setOpenDropdown(key);
+  const handleMouseLeave = () => setOpenDropdown(null);
 
   return (
-    <header className="sticky top-0 z-50 w-full transition-all duration-300">
-      
-      {/* TOP COMPLIANCE & CONTACT BAR */}
-      <div className="bg-slate-100 text-slate-700 text-[11px] py-1 px-4 border-b border-slate-200">
+    <header className="sticky top-0 z-50 w-full">
+
+      {/* ── TOP DARK CONTACT BAR ── */}
+      <div className="bg-[#0B1B4F] text-white text-[11px] py-2 px-4">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-5">
-            <a href="tel:+919920350663" className="flex items-center gap-1 hover:text-infini-cyan transition-colors font-medium">
-              <Phone className="w-3 h-3 text-infini-navy" />
-              <span>+91 9920350663</span>
+
+          {/* Contact details */}
+          <div className="flex items-center divide-x divide-white/20">
+            <a
+              href="tel:+919920350663"
+              className="flex items-center gap-1.5 pr-4 hover:text-[#00C2FF] transition-colors group"
+            >
+              <Phone className="w-3 h-3 text-[#00C2FF]" />
+              <span className="font-medium">+91 9920350663</span>
             </a>
-            <a href="mailto:info@infini-infra.com" className="flex items-center gap-1 hover:text-infini-cyan transition-colors font-medium">
-              <Mail className="w-3 h-3 text-infini-navy" />
-              <span>info@infini-infra.com</span>
+            <a
+              href="mailto:info@infini-infra.com"
+              className="flex items-center gap-1.5 px-4 hover:text-[#00C2FF] transition-colors"
+            >
+              <Mail className="w-3 h-3 text-[#00C2FF]" />
+              <span className="font-medium">info@infini-infra.com</span>
             </a>
-            <span className="hidden md:flex items-center gap-1 text-slate-500 font-medium">
-              <MapPin className="w-3 h-3 text-infini-navy" />
-              <span>Goregaon East, Mumbai 400063</span>
+            <span className="hidden md:flex items-center gap-1.5 pl-4 text-white/60 font-medium">
+              <span className="text-[#22C55E] font-bold">★</span> ISO &amp; RDSO Approved
             </span>
           </div>
 
-          <div className="flex items-center gap-3 text-[10px] font-bold text-infini-navy">
-            <span className="bg-infini-navy/10 px-2 py-0.5 rounded border border-infini-navy/20 text-infini-navy">
-              RDSO APPROVED WELDING KITS
-            </span>
-            <span className="hidden sm:inline-block text-infini-emerald">
-              ★ ISO & SAFETY COMPLIANT
-            </span>
+          {/* Social icons */}
+          <div className="flex items-center gap-3 text-white/70">
+            <a href="#" aria-label="Facebook" className="hover:text-[#00C2FF] transition-colors">
+              <Facebook className="w-3.5 h-3.5" />
+            </a>
+            <a href="#" aria-label="Instagram" className="hover:text-[#00C2FF] transition-colors">
+              <Instagram className="w-3.5 h-3.5" />
+            </a>
+            <a href="#" aria-label="LinkedIn" className="hover:text-[#00C2FF] transition-colors">
+              <Linkedin className="w-3.5 h-3.5" />
+            </a>
+            <a href="#" aria-label="YouTube" className="hover:text-[#00C2FF] transition-colors">
+              <Youtube className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
       </div>
 
-      {/* MAIN NAVBAR - BALANCED COMPACT HEIGHT */}
-      <nav className="bg-white px-4 sm:px-6 lg:px-8 py-1 shadow-md border-b border-slate-200 transition-all">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          
-          {/* BALANCED HORIZONTAL LOGO */}
-          <Link href="/" className="flex items-center group shrink-0 py-0.5">
-            <img 
-              src="/images/logo.jpg" 
-              alt="INFINI Infrastructure & Engineering Pvt. Ltd. Logo" 
-              className="h-14 sm:h-16 md:h-18 w-auto max-w-[260px] sm:max-w-[320px] md:max-w-[380px] object-contain transition-transform group-hover:scale-102"
+      {/* ── MAIN WHITE NAVBAR ── */}
+      <nav className="bg-white shadow-md border-b border-slate-100 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between h-[68px] gap-4">
+
+          {/* Logo */}
+          <Link href="/" className="flex items-center shrink-0 group">
+            <img
+              src="/images/logo.jpg"
+              alt="INFINI Infrastructure & Engineering Pvt. Ltd."
+              className="h-12 sm:h-14 w-auto max-w-[240px] sm:max-w-[300px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </Link>
 
-          {/* DESKTOP NAV LINKS */}
-          <div className="hidden lg:flex items-center gap-7">
-            <Link href="/" className="text-sm font-bold text-infini-navy hover:text-infini-cyan transition-colors py-2">
+          {/* Desktop Nav Links */}
+          <div className="hidden lg:flex items-center gap-1">
+
+            {/* HOME */}
+            <Link
+              href="/"
+              className="px-3 py-2 rounded-lg text-sm font-bold text-[#0B1B4F] hover:text-[#00C2FF] hover:bg-slate-50 transition-all duration-200"
+            >
               HOME
             </Link>
 
-            {/* ABOUT US DROPDOWN */}
-            <div 
-              className="relative group"
-              onMouseEnter={() => setAboutDropdownOpen(true)}
-              onMouseLeave={() => setAboutDropdownOpen(false)}
+            {/* ABOUT US */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleMouseEnter("about")}
+              onMouseLeave={handleMouseLeave}
             >
-              <button className="flex items-center gap-1 text-sm font-bold text-infini-navy hover:text-infini-cyan transition-colors py-2">
-                <span>ABOUT US</span>
-                <ChevronDown className="w-4 h-4 text-infini-navy" />
+              <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-bold text-[#0B1B4F] hover:text-[#00C2FF] hover:bg-slate-50 transition-all duration-200">
+                ABOUT US
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === "about" ? "rotate-180" : ""}`} />
               </button>
-
-              {aboutDropdownOpen && (
-                <div className="absolute top-full left-0 w-64 bg-white rounded-2xl p-3 shadow-2xl border border-slate-200 space-y-1 animate-fadeIn z-50">
-                  <Link 
-                    href="/about/vision-mission" 
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-slate-100 text-xs font-semibold text-infini-navy hover:text-infini-cyan transition-all"
-                  >
-                    <Sparkles className="w-4 h-4 text-infini-cyan" />
-                    <span>Vision, Mission & Core Values</span>
-                  </Link>
-                  <Link 
-                    href="/about/why-infini" 
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-slate-100 text-xs font-semibold text-infini-navy hover:text-infini-cyan transition-all"
-                  >
-                    <Award className="w-4 h-4 text-infini-emerald" />
-                    <span>Why INFINI Infra</span>
-                  </Link>
-                  <Link 
-                    href="/about/media-news" 
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-slate-100 text-xs font-semibold text-infini-navy hover:text-infini-cyan transition-all"
-                  >
-                    <Info className="w-4 h-4 text-infini-amber" />
-                    <span>Media, Press & News</span>
-                  </Link>
+              {openDropdown === "about" && (
+                <div className="absolute top-full left-0 mt-0 w-56 bg-white rounded-xl shadow-2xl border border-slate-100 py-2 z-50 animate-fadeIn">
+                  {aboutLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-slate-700 hover:text-[#00C2FF] hover:bg-slate-50 transition-all"
+                    >
+                      {item.icon}
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
 
-            {/* SECTORS DROPDOWN */}
-            <div 
-              className="relative group"
-              onMouseEnter={() => setSectorsDropdownOpen(true)}
-              onMouseLeave={() => setSectorsDropdownOpen(false)}
+            {/* MECHANICAL */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleMouseEnter("mechanical")}
+              onMouseLeave={handleMouseLeave}
             >
-              <button className="flex items-center gap-1 text-sm font-bold text-infini-navy hover:text-infini-cyan transition-colors py-2">
-                <span>SECTORS</span>
-                <ChevronDown className="w-4 h-4 text-infini-navy" />
+              <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-bold text-[#0B1B4F] hover:text-[#00C2FF] hover:bg-slate-50 transition-all duration-200">
+                <Wrench className="w-3.5 h-3.5 text-[#00C2FF]" />
+                MECHANICAL
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === "mechanical" ? "rotate-180" : ""}`} />
               </button>
-
-              {sectorsDropdownOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[650px] bg-white rounded-2xl p-6 shadow-2xl border border-slate-200 grid grid-cols-3 gap-6 animate-fadeIn z-50">
-                  
-                  {/* MECHANICAL */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-infini-navy font-bold text-xs uppercase tracking-wider border-b border-slate-200 pb-2">
-                      <Wrench className="w-4 h-4 text-infini-cyan" />
-                      <span>Mechanical</span>
-                    </div>
-                    <ul className="space-y-1.5 text-xs text-slate-700 font-medium">
-                      <li>
-                        <Link href="/sectors/mechanical/crane-rail-fixtures" className="hover:text-infini-cyan transition-colors block py-1">
-                          Crane Rail Fixtures
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/sectors/mechanical/anti-corrosion-coating" className="hover:text-infini-cyan transition-colors block py-1">
-                          Anti Corrosion Coating
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/sectors/mechanical/steel-aluminium-fabrication" className="hover:text-infini-cyan transition-colors block py-1">
-                          Steel & Aluminium Fab.
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/sectors/mechanical/land-rail-survey" className="hover:text-infini-cyan transition-colors block py-1">
-                          Land & Rail Survey
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/sectors/mechanical/rdso-thermit-welding" className="hover:text-infini-cyan transition-colors block py-1">
-                          Thermit Rail Welding
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/sectors/mechanical/railway-siding-works" className="hover:text-infini-cyan transition-colors block py-1">
-                          Railway Siding Works
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* CIVIL */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-infini-navy font-bold text-xs uppercase tracking-wider border-b border-slate-200 pb-2">
-                      <HardHat className="w-4 h-4 text-infini-emerald" />
-                      <span>Civil</span>
-                    </div>
-                    <ul className="space-y-1.5 text-xs text-slate-700 font-medium">
-                      <li>
-                        <Link href="/sectors/civil/jetty-works-repairs" className="hover:text-infini-emerald transition-colors block py-1">
-                          Jetty Works & Repairs
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/sectors/civil/paver-block-works" className="hover:text-infini-emerald transition-colors block py-1">
-                          Paver Block Works
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/sectors/civil/drainage-works" className="hover:text-infini-emerald transition-colors block py-1">
-                          Drainage Works
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/sectors/civil/mass-concrete-works" className="hover:text-infini-emerald transition-colors block py-1">
-                          Mass Concrete Works
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/sectors/civil/rcc-pcc-girders" className="hover:text-infini-emerald transition-colors block py-1">
-                          RCC & PCC Girders
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* TOURISM */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-infini-navy font-bold text-xs uppercase tracking-wider border-b border-slate-200 pb-2">
-                      <Ship className="w-4 h-4 text-infini-amber" />
-                      <span>Tourism</span>
-                    </div>
-                    <ul className="space-y-1.5 text-xs text-slate-700 font-medium">
-                      <li>
-                        <Link href="/sectors/tourism/floating-docks-jetties" className="hover:text-infini-amber transition-colors block py-1">
-                          Floating Docks & Jetties
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/sectors/tourism/seaplane-platforms" className="hover:text-infini-amber transition-colors block py-1">
-                          Seaplane Platforms
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-
+              {openDropdown === "mechanical" && (
+                <div className="absolute top-full left-0 mt-0 w-56 bg-white rounded-xl shadow-2xl border border-slate-100 py-2 z-50 animate-fadeIn">
+                  {mechanicalLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:text-[#00C2FF] hover:bg-slate-50 transition-all border-l-2 border-transparent hover:border-[#00C2FF] mx-2 rounded-r-md"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
 
-            <Link href="/gallery" className="text-sm font-bold text-infini-navy hover:text-infini-cyan transition-colors py-2">
+            {/* CIVIL */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleMouseEnter("civil")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-bold text-[#0B1B4F] hover:text-[#22C55E] hover:bg-slate-50 transition-all duration-200">
+                <HardHat className="w-3.5 h-3.5 text-[#22C55E]" />
+                CIVIL
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === "civil" ? "rotate-180" : ""}`} />
+              </button>
+              {openDropdown === "civil" && (
+                <div className="absolute top-full left-0 mt-0 w-52 bg-white rounded-xl shadow-2xl border border-slate-100 py-2 z-50 animate-fadeIn">
+                  {civilLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:text-[#22C55E] hover:bg-slate-50 transition-all border-l-2 border-transparent hover:border-[#22C55E] mx-2 rounded-r-md"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* TOURISM */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleMouseEnter("tourism")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-bold text-[#0B1B4F] hover:text-[#F97316] hover:bg-slate-50 transition-all duration-200">
+                <Ship className="w-3.5 h-3.5 text-[#F97316]" />
+                TOURISM
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === "tourism" ? "rotate-180" : ""}`} />
+              </button>
+              {openDropdown === "tourism" && (
+                <div className="absolute top-full left-0 mt-0 w-52 bg-white rounded-xl shadow-2xl border border-slate-100 py-2 z-50 animate-fadeIn">
+                  {tourismLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:text-[#F97316] hover:bg-slate-50 transition-all border-l-2 border-transparent hover:border-[#F97316] mx-2 rounded-r-md"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* GALLERY */}
+            <Link
+              href="/gallery"
+              className="px-3 py-2 rounded-lg text-sm font-bold text-[#0B1B4F] hover:text-[#00C2FF] hover:bg-slate-50 transition-all duration-200"
+            >
               GALLERY
             </Link>
 
-            <Link href="/career" className="text-sm font-bold text-infini-navy hover:text-infini-cyan transition-colors py-2">
+            {/* CAREERS */}
+            <Link
+              href="/career"
+              className="px-3 py-2 rounded-lg text-sm font-bold text-[#0B1B4F] hover:text-[#00C2FF] hover:bg-slate-50 transition-all duration-200"
+            >
               CAREERS
             </Link>
-
-            <Link href="/contact" className="text-sm font-bold text-infini-navy hover:text-infini-cyan transition-colors py-2">
-              CONTACT US
-            </Link>
           </div>
 
-          {/* CTA ACTION BUTTON */}
-          <div className="hidden lg:block shrink-0">
-            <Link 
-              href="/contact" 
-              className="bg-infini-navy text-white font-bold px-5 py-2 rounded-full text-xs hover:bg-infini-cyan hover:text-infini-navy hover:shadow-md transition-all duration-300 inline-block"
+          {/* CTA + Mobile Toggle */}
+          <div className="flex items-center gap-3 shrink-0">
+            <Link
+              href="/contact"
+              className="hidden lg:inline-flex items-center gap-1.5 bg-[#0B1B4F] text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full shadow-md hover:bg-[#00C2FF] hover:text-[#0B1B4F] transition-all duration-300"
             >
-              PROJECT INQUIRY
+              Contact Us
             </Link>
-          </div>
 
-          {/* MOBILE MENU TOGGLE */}
-          <div className="lg:hidden">
-            <button 
+            {/* Mobile Menu Toggle */}
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-infini-navy hover:text-infini-cyan p-2"
-              aria-label="Toggle Navigation Menu"
+              className="lg:hidden text-[#0B1B4F] hover:text-[#00C2FF] p-2 transition-colors"
+              aria-label="Toggle Navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -261,57 +271,145 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MOBILE DRAWER */}
+      {/* ── MOBILE DRAWER ── */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white text-infini-navy px-6 py-6 border-b border-slate-200 space-y-4 shadow-xl">
-          <Link 
-            href="/" 
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm font-bold text-infini-cyan"
-          >
-            HOME
-          </Link>
+        <div className="lg:hidden bg-white border-b border-slate-200 shadow-xl overflow-y-auto max-h-[80vh]">
+          <div className="px-5 py-4 space-y-1">
 
-          <div className="space-y-2 border-t border-slate-200 pt-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">About Us</span>
-            <div className="pl-3 space-y-1.5 text-xs text-slate-700 font-semibold">
-              <Link href="/about/vision-mission" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-infini-cyan">
-                Vision & Mission
-              </Link>
-              <Link href="/about/why-infini" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-infini-cyan">
-                Why INFINI Infra
-              </Link>
-              <Link href="/about/media-news" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-infini-cyan">
-                Media & News
-              </Link>
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-3 text-sm font-bold text-[#0B1B4F] hover:text-[#00C2FF] border-b border-slate-100"
+            >
+              HOME
+            </Link>
+
+            {/* About mobile accordion */}
+            <div className="border-b border-slate-100">
+              <button
+                onClick={() => setMobileExpanded(mobileExpanded === "about" ? null : "about")}
+                className="flex items-center justify-between w-full px-3 py-3 text-sm font-bold text-[#0B1B4F]"
+              >
+                ABOUT US
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "about" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileExpanded === "about" && (
+                <div className="pb-2 pl-4 space-y-0.5">
+                  {aboutLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#00C2FF]"
+                    >
+                      {item.icon} {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
-          </div>
 
-          <div className="space-y-2 border-t border-slate-200 pt-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Sectors & Services</span>
-            <div className="pl-3 space-y-2 text-xs font-semibold">
-              <Link href="/sectors/mechanical" onClick={() => setMobileMenuOpen(false)} className="block text-infini-navy hover:text-infini-cyan">
-                Mechanical Sector (6 Services)
-              </Link>
-              <Link href="/sectors/civil" onClick={() => setMobileMenuOpen(false)} className="block text-infini-emerald hover:text-infini-navy">
-                Civil Sector (5 Services)
-              </Link>
-              <Link href="/sectors/tourism" onClick={() => setMobileMenuOpen(false)} className="block text-infini-amber hover:text-infini-navy">
-                Tourism Sector (2 Services)
-              </Link>
+            {/* Mechanical mobile accordion */}
+            <div className="border-b border-slate-100">
+              <button
+                onClick={() => setMobileExpanded(mobileExpanded === "mechanical" ? null : "mechanical")}
+                className="flex items-center justify-between w-full px-3 py-3 text-sm font-bold text-[#0B1B4F]"
+              >
+                <span className="flex items-center gap-2"><Wrench className="w-4 h-4 text-[#00C2FF]" /> MECHANICAL</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "mechanical" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileExpanded === "mechanical" && (
+                <div className="pb-2 pl-4 space-y-0.5">
+                  {mechanicalLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#00C2FF]"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
-          </div>
 
-          <div className="border-t border-slate-200 pt-3 space-y-2 text-sm font-bold">
-            <Link href="/gallery" onClick={() => setMobileMenuOpen(false)} className="block hover:text-infini-cyan">
+            {/* Civil mobile accordion */}
+            <div className="border-b border-slate-100">
+              <button
+                onClick={() => setMobileExpanded(mobileExpanded === "civil" ? null : "civil")}
+                className="flex items-center justify-between w-full px-3 py-3 text-sm font-bold text-[#0B1B4F]"
+              >
+                <span className="flex items-center gap-2"><HardHat className="w-4 h-4 text-[#22C55E]" /> CIVIL</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "civil" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileExpanded === "civil" && (
+                <div className="pb-2 pl-4 space-y-0.5">
+                  {civilLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#22C55E]"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Tourism mobile accordion */}
+            <div className="border-b border-slate-100">
+              <button
+                onClick={() => setMobileExpanded(mobileExpanded === "tourism" ? null : "tourism")}
+                className="flex items-center justify-between w-full px-3 py-3 text-sm font-bold text-[#0B1B4F]"
+              >
+                <span className="flex items-center gap-2"><Ship className="w-4 h-4 text-[#F97316]" /> TOURISM</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "tourism" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileExpanded === "tourism" && (
+                <div className="pb-2 pl-4 space-y-0.5">
+                  {tourismLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#F97316]"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/gallery"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-3 text-sm font-bold text-[#0B1B4F] hover:text-[#00C2FF] border-b border-slate-100"
+            >
               GALLERY
             </Link>
-            <Link href="/career" onClick={() => setMobileMenuOpen(false)} className="block hover:text-infini-cyan">
+
+            <Link
+              href="/career"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-3 text-sm font-bold text-[#0B1B4F] hover:text-[#00C2FF] border-b border-slate-100"
+            >
               CAREERS
             </Link>
-            <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="block hover:text-infini-cyan">
-              CONTACT US
-            </Link>
+
+            <div className="pt-3 pb-2">
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block w-full text-center bg-[#0B1B4F] text-white text-sm font-bold uppercase tracking-wider px-5 py-3 rounded-full hover:bg-[#00C2FF] hover:text-[#0B1B4F] transition-all"
+              >
+                Contact Us
+              </Link>
+            </div>
+
           </div>
         </div>
       )}
