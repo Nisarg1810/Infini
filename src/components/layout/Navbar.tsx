@@ -7,12 +7,15 @@ import {
   Menu,
   X,
   ChevronDown,
+  ChevronRight,
+  Home,
   Wrench,
   HardHat,
   Ship,
   Sparkles,
   Award,
   Info,
+  Mail,
 } from "lucide-react";
 
 const mechanicalLinks = [
@@ -247,142 +250,198 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* ── MOBILE DRAWER ── */}
+      {/* ── MOBILE DRAWER SIDEBAR ── */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 shadow-xl overflow-y-auto max-h-[80vh]">
-          <div className="px-5 py-4 space-y-1">
+        <div className="lg:hidden bg-white border-b border-slate-200 shadow-2xl overflow-y-auto max-h-[85vh] transition-all duration-300">
+          <div className="p-4 space-y-1.5">
 
+            {/* HOME */}
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-3 text-sm font-bold text-[#0B1B4F] hover:text-[#00C2FF] border-b border-slate-100"
+              className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-bold text-[#0B1B4F] hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] transition-all"
             >
-              HOME
+              <Home className="w-4 h-4 text-slate-500" />
+              <span>Home</span>
             </Link>
 
-            {/* About mobile accordion */}
-            <div className="border-b border-slate-100">
+            {/* ABOUT US */}
+            <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === "about" ? null : "about")}
-                className="flex items-center justify-between w-full px-3 py-3 text-sm font-bold text-[#0B1B4F]"
+                className={`flex items-center justify-between w-full px-4 py-3 text-sm font-bold transition-all rounded-xl ${
+                  mobileExpanded === "about"
+                    ? "bg-[#0B1B4F]/5 text-[#00C2FF]"
+                    : "text-[#0B1B4F] hover:bg-slate-100"
+                }`}
               >
-                ABOUT US
-                <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "about" ? "rotate-180" : ""}`} />
+                <div className="flex items-center gap-2.5">
+                  <Info className="w-4 h-4 text-slate-500" />
+                  <span>About Us</span>
+                </div>
+                {mobileExpanded === "about" ? (
+                  <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
+                ) : (
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                )}
               </button>
               {mobileExpanded === "about" && (
-                <div className="pb-2 pl-4 space-y-0.5">
+                <div className="my-1.5 ml-4 pl-3.5 border-l-2 border-[#00C2FF]/30 space-y-1">
                   {aboutLinks.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#00C2FF]"
+                      className="flex items-center gap-2 px-3.5 py-2.5 rounded-lg text-xs font-semibold text-slate-700 hover:text-[#00C2FF] hover:bg-[#00C2FF]/10 transition-all"
                     >
-                      {item.label}
+                      <span className="text-[#00C2FF] font-bold text-sm">›</span>
+                      <span>{item.label}</span>
                     </Link>
                   ))}
                 </div>
               )}
             </div>
 
-            {/* Mechanical mobile accordion */}
-            <div className="border-b border-slate-100">
+            {/* MECHANICAL SECTOR */}
+            <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === "mechanical" ? null : "mechanical")}
-                className="flex items-center justify-between w-full px-3 py-3 text-sm font-bold text-[#0B1B4F]"
+                className={`flex items-center justify-between w-full px-4 py-3 text-sm font-bold transition-all rounded-xl ${
+                  mobileExpanded === "mechanical"
+                    ? "bg-[#0B1B4F]/5 text-[#00C2FF]"
+                    : "text-[#0B1B4F] hover:bg-slate-100"
+                }`}
               >
-                <span>MECHANICAL</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "mechanical" ? "rotate-180" : ""}`} />
+                <div className="flex items-center gap-2.5">
+                  <Wrench className="w-4 h-4 text-slate-500" />
+                  <span>Mechanical Sector</span>
+                </div>
+                {mobileExpanded === "mechanical" ? (
+                  <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
+                ) : (
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                )}
               </button>
               {mobileExpanded === "mechanical" && (
-                <div className="pb-2 pl-4 space-y-0.5">
+                <div className="my-1.5 ml-4 pl-3.5 border-l-2 border-[#00C2FF]/30 space-y-1">
                   {mechanicalLinks.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#00C2FF]"
+                      className="flex items-center gap-2 px-3.5 py-2.5 rounded-lg text-xs font-semibold text-slate-700 hover:text-[#00C2FF] hover:bg-[#00C2FF]/10 transition-all"
                     >
-                      {item.label}
+                      <span className="text-[#00C2FF] font-bold text-sm">›</span>
+                      <span>{item.label}</span>
                     </Link>
                   ))}
                 </div>
               )}
             </div>
 
-            {/* Civil mobile accordion */}
-            <div className="border-b border-slate-100">
+            {/* CIVIL SECTOR */}
+            <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === "civil" ? null : "civil")}
-                className="flex items-center justify-between w-full px-3 py-3 text-sm font-bold text-[#0B1B4F]"
+                className={`flex items-center justify-between w-full px-4 py-3 text-sm font-bold transition-all rounded-xl ${
+                  mobileExpanded === "civil"
+                    ? "bg-[#0B1B4F]/5 text-[#00C2FF]"
+                    : "text-[#0B1B4F] hover:bg-slate-100"
+                }`}
               >
-                <span>CIVIL</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "civil" ? "rotate-180" : ""}`} />
+                <div className="flex items-center gap-2.5">
+                  <HardHat className="w-4 h-4 text-slate-500" />
+                  <span>Civil Sector</span>
+                </div>
+                {mobileExpanded === "civil" ? (
+                  <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
+                ) : (
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                )}
               </button>
               {mobileExpanded === "civil" && (
-                <div className="pb-2 pl-4 space-y-0.5">
+                <div className="my-1.5 ml-4 pl-3.5 border-l-2 border-[#00C2FF]/30 space-y-1">
                   {civilLinks.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#22C55E]"
+                      className="flex items-center gap-2 px-3.5 py-2.5 rounded-lg text-xs font-semibold text-slate-700 hover:text-[#00C2FF] hover:bg-[#00C2FF]/10 transition-all"
                     >
-                      {item.label}
+                      <span className="text-[#00C2FF] font-bold text-sm">›</span>
+                      <span>{item.label}</span>
                     </Link>
                   ))}
                 </div>
               )}
             </div>
 
-            {/* Tourism mobile accordion */}
-            <div className="border-b border-slate-100">
+            {/* TOURISM & MARINE SECTOR */}
+            <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === "tourism" ? null : "tourism")}
-                className="flex items-center justify-between w-full px-3 py-3 text-sm font-bold text-[#0B1B4F]"
+                className={`flex items-center justify-between w-full px-4 py-3 text-sm font-bold transition-all rounded-xl ${
+                  mobileExpanded === "tourism"
+                    ? "bg-[#0B1B4F]/5 text-[#00C2FF]"
+                    : "text-[#0B1B4F] hover:bg-slate-100"
+                }`}
               >
-                <span>TOURISM</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "tourism" ? "rotate-180" : ""}`} />
+                <div className="flex items-center gap-2.5">
+                  <Ship className="w-4 h-4 text-slate-500" />
+                  <span>Tourism &amp; Marine Sector</span>
+                </div>
+                {mobileExpanded === "tourism" ? (
+                  <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
+                ) : (
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                )}
               </button>
               {mobileExpanded === "tourism" && (
-                <div className="pb-2 pl-4 space-y-0.5">
+                <div className="my-1.5 ml-4 pl-3.5 border-l-2 border-[#00C2FF]/30 space-y-1">
                   {tourismLinks.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#F97316]"
+                      className="flex items-center gap-2 px-3.5 py-2.5 rounded-lg text-xs font-semibold text-slate-700 hover:text-[#00C2FF] hover:bg-[#00C2FF]/10 transition-all"
                     >
-                      {item.label}
+                      <span className="text-[#00C2FF] font-bold text-sm">›</span>
+                      <span>{item.label}</span>
                     </Link>
                   ))}
                 </div>
               )}
             </div>
 
+            {/* GALLERY */}
             <Link
               href="/gallery"
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-3 text-sm font-bold text-[#0B1B4F] hover:text-[#00C2FF] border-b border-slate-100"
+              className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-bold text-[#0B1B4F] hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] transition-all"
             >
-              GALLERY
+              <Sparkles className="w-4 h-4 text-slate-500" />
+              <span>Project Gallery</span>
             </Link>
 
+            {/* CAREERS */}
             <Link
               href="/career"
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-3 text-sm font-bold text-[#0B1B4F] hover:text-[#00C2FF] border-b border-slate-100"
+              className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-bold text-[#0B1B4F] hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] transition-all"
             >
-              CAREERS
+              <Award className="w-4 h-4 text-slate-500" />
+              <span>Careers</span>
             </Link>
 
-            <div className="pt-3 pb-2">
+            {/* CTA BUTTON */}
+            <div className="pt-3 pb-1">
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block w-full text-center bg-[#0B1B4F] text-white text-sm font-bold uppercase tracking-wider px-5 py-3 rounded-full hover:bg-[#00C2FF] hover:text-[#0B1B4F] transition-all"
+                className="flex items-center justify-center gap-2 w-full bg-[#00C2FF] text-[#0B1B4F] text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md hover:bg-[#0B1B4F] hover:text-white transition-all duration-300"
               >
-                Contact Us
+                <Mail className="w-4 h-4" />
+                <span>Contact Us</span>
               </Link>
             </div>
 
