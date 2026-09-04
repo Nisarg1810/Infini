@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
+import Breadcrumb from "@/components/ui/Breadcrumb";
+import BackToTop from "@/components/ui/BackToTop";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -82,9 +85,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`flex flex-col min-h-screen bg-slate-50 text-slate-800 antialiased ${cormorant.variable} ${inter.variable}`}>
+        <ScrollProgressBar />
         <Navbar />
+        <Breadcrumb />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <BackToTop />
 
         {/* ─── FLOATING WHATSAPP BUTTON ─── */}
         <a

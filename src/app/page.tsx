@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -13,6 +13,91 @@ import {
   Award,
   Clock,
 } from "lucide-react";
+
+// ── Animated counter hook ──────────────────────────────────────────
+function useCountUp(target: number, duration = 1500, started: boolean) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!started) return;
+    let startTime: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [started, target, duration]);
+  return count;
+}
+
+// ── Stats strip with animated counters ────────────────────────────
+function StatCell({
+  num,
+  suffix,
+  label,
+  borderClasses,
+}: {
+  num: number | null;
+  suffix: string;
+  label: string;
+  borderClasses: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [started, setStarted] = useState(false);
+  const count = useCountUp(num ?? 0, 1400, started);
+
+  useEffect(() => {
+    if (num === null) return; // non-numeric stat, skip
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStarted(true); observer.disconnect(); } },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [num]);
+
+  const displayValue = num !== null ? `${count}${suffix}` : suffix;
+
+  return (
+    <div ref={ref} className={`py-6 px-4 sm:px-6 text-center ${borderClasses}`}>
+      <div className="text-2xl sm:text-3xl font-bold text-[#00C2FF] tabular-nums">{displayValue}</div>
+      <div className="text-xs text-white/70 mt-1 font-medium">{label}</div>
+    </div>
+  );
+}
+
+function StatsStrip() {
+  const stats = [
+    { num: 100, suffix: "+", label: "Turnkey Projects" },
+    { num: 4,   suffix: "+", label: "States & Middle East" },
+    { num: null, suffix: "RDSO", label: "Approved Welding" },
+    { num: 100, suffix: "%", label: "On-Time Execution" },
+  ];
+
+  return (
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4">
+      {stats.map((s, idx) => (
+        <StatCell
+          key={s.label}
+          num={s.num}
+          suffix={s.suffix}
+          label={s.label}
+          borderClasses={[
+            idx % 2 === 0 ? "border-r border-white/10" : "",
+            idx < 2 ? "border-b border-white/10 md:border-b-0" : "",
+            idx < 3 ? "md:border-r md:border-white/10" : "md:border-r-0",
+          ].join(" ")}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -139,25 +224,7 @@ export default function HomePage() {
 
       {/* ─── STATS STRIP ─── */}
       <section className="border-b border-slate-200 bg-[#0B1B4F]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4">
-          {[
-            { value: "100+", label: "Turnkey Projects" },
-            { value: "4+", label: "States & Middle East" },
-            { value: "RDSO", label: "Approved Welding" },
-            { value: "100%", label: "On-Time Execution" },
-          ].map((s, idx) => (
-            <div
-              key={s.label}
-              className={`py-6 px-4 sm:px-6 text-center ${idx % 2 === 0 ? "border-r border-white/10" : ""
-                } ${idx < 2 ? "border-b border-white/10 md:border-b-0" : ""
-                } ${idx < 3 ? "md:border-r md:border-white/10" : "md:border-r-0"
-                }`}
-            >
-              <div className="text-2xl sm:text-3xl font-bold text-[#00C2FF]">{s.value}</div>
-              <div className="text-xs sm:text-xs text-white/70 mt-1 font-medium">{s.label}</div>
-            </div>
-          ))}
-        </div>
+        <StatsStrip />
       </section>
 
       {/* ─── WHO WE ARE ─── */}
