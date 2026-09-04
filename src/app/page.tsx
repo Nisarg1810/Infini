@@ -82,26 +82,26 @@ export default function HomePage() {
         ))}
 
         {/* Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-5 sm:px-8 z-10 py-10">
-          <span className={`inline-block px-3 py-1 rounded-full border text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest mb-3 sm:mb-5 ${heroSlides[activeSlide].badgeColor}`}>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 sm:px-8 z-10 py-12">
+          <span className={`inline-block px-4 py-1.5 rounded-full border text-xs sm:text-xs font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-sm backdrop-blur-md ${heroSlides[activeSlide].badgeColor}`}>
             {heroSlides[activeSlide].badge}
           </span>
-          <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold leading-snug sm:leading-tight max-w-4xl mb-3 sm:mb-5 drop-shadow">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight max-w-4xl mb-4 sm:mb-6 drop-shadow-lg tracking-tight">
             {heroSlides[activeSlide].title}
           </h1>
-          <p className="text-xs sm:text-base text-white/80 max-w-2xl mb-6 sm:mb-8 leading-relaxed px-2">
+          <p className="text-sm sm:text-lg lg:text-xl text-white/90 max-w-2xl mb-8 sm:mb-10 leading-relaxed font-normal px-2 drop-shadow">
             {heroSlides[activeSlide].subtitle}
           </p>
-          <div className="flex flex-col xs:flex-row items-center justify-center gap-3 w-full xs:w-auto px-4 xs:px-0">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
             <Link
               href={heroSlides[activeSlide].ctaLink}
-              className="w-full xs:w-auto bg-[#00C2FF] text-[#0B1B4F] font-bold px-6 sm:px-7 py-2.5 sm:py-3 rounded-md text-xs sm:text-sm hover:bg-white transition-colors flex items-center justify-center gap-2"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#00C2FF] text-[#0B1B4F] font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:shadow-xl transition-all duration-300 gap-2 shadow-lg"
             >
               {heroSlides[activeSlide].ctaText} <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/contact"
-              className="w-full xs:w-auto border border-white/60 text-white font-semibold px-6 sm:px-7 py-2.5 sm:py-3 rounded-md text-xs sm:text-sm hover:bg-white/10 transition-colors text-center"
+              className="w-full sm:w-auto inline-flex items-center justify-center border-2 border-white/80 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:text-[#0B1B4F] transition-all duration-300 text-center shadow-lg"
             >
               Contact Us
             </Link>
