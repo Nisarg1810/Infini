@@ -47,41 +47,41 @@ export default function WhyInfiniPage() {
         {/* 4 Pillars of Excellence Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
-          <div className="glass-card p-8 rounded-3xl space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-infini-navy text-white flex items-center justify-center">
-              <Users className="w-6 h-6 text-infini-cyan" />
+          <div className="glass-card p-8 rounded-3xl space-y-4 hover:border-[#00C2FF]/40 transition-all duration-300 group">
+            <div className="w-12 h-12 rounded-2xl bg-[#0B1B4F]/5 border border-[#0B1B4F]/15 flex items-center justify-center text-[#0B1B4F] shadow-sm group-hover:bg-[#0B1B4F] group-hover:text-[#00C2FF] group-hover:border-[#0B1B4F] transition-all duration-300">
+              <Users className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-extrabold text-infini-navy">Qualified Technical Workforce</h3>
+            <h3 className="text-lg font-extrabold text-[#0B1B4F]">Qualified Technical Workforce</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
               Equipped with certified rail welding crews, marine structural engineers, land survey experts, and civil construction teams ready for rapid deployment across India and the Middle East.
             </p>
           </div>
 
-          <div className="glass-card p-8 rounded-3xl space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-infini-emerald text-white flex items-center justify-center">
-              <ShieldCheck className="w-6 h-6 text-white" />
+          <div className="glass-card p-8 rounded-3xl space-y-4 hover:border-emerald-500/40 transition-all duration-300 group">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 shadow-sm group-hover:bg-emerald-600 group-hover:text-white group-hover:border-emerald-600 transition-all duration-300">
+              <ShieldCheck className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-extrabold text-infini-navy">Uncompromising Safety & Quality</h3>
+            <h3 className="text-lg font-extrabold text-[#0B1B4F]">Uncompromising Safety & Quality</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
               Strict compliance with port safety norms, RDSO welding standards, breakwater concrete block positioning criteria, and ISO environmental standards.
             </p>
           </div>
 
-          <div className="glass-card p-8 rounded-3xl space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-infini-amber text-white flex items-center justify-center">
-              <Clock className="w-6 h-6 text-white" />
+          <div className="glass-card p-8 rounded-3xl space-y-4 hover:border-amber-500/40 transition-all duration-300 group">
+            <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600 shadow-sm group-hover:bg-amber-500 group-hover:text-white group-hover:border-amber-500 transition-all duration-300">
+              <Clock className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-extrabold text-infini-navy">Timely Completion Assurance</h3>
+            <h3 className="text-lg font-extrabold text-[#0B1B4F]">Timely Completion Assurance</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
               Efficient project management workflows ensuring on-time delivery for public sector dockyard projects, container terminals, and commercial developments.
             </p>
           </div>
 
-          <div className="glass-card p-8 rounded-3xl space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-infini-cyan text-infini-navy flex items-center justify-center">
+          <div className="glass-card p-8 rounded-3xl space-y-4 hover:border-[#00C2FF]/40 transition-all duration-300 group">
+            <div className="w-12 h-12 rounded-2xl bg-[#00C2FF]/10 border border-[#00C2FF]/25 flex items-center justify-center text-[#00C2FF] shadow-sm group-hover:bg-[#00C2FF] group-hover:text-[#0B1B4F] group-hover:border-[#00C2FF] transition-all duration-300">
               <Award className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-extrabold text-infini-navy">Strategic Partner Network</h3>
+            <h3 className="text-lg font-extrabold text-[#0B1B4F]">Strategic Partner Network</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
               Official marketing & business development associates for Visioncraft Industries Metguard protective coatings across 4 major Indian states and Middle East territories.
             </p>

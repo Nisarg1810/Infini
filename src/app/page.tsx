@@ -8,6 +8,10 @@ import {
   ChevronRight,
   Phone,
   CheckCircle,
+  Users,
+  ShieldCheck,
+  Award,
+  Clock,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -384,17 +388,22 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {[
-              { title: "Qualified Team", desc: "Technical experts and skilled manpower with extensive hands-on experience." },
-              { title: "Safety First", desc: "Zero-compromise safety protocols on marine and high-risk construction sites." },
-              { title: "Quality Workmanship", desc: "Precision execution for RDSO approved welding, girders, and jetties." },
-              { title: "Timely Delivery", desc: "Punctual delivery for ports, shipyards, public sector and private contracts." },
-            ].map((item) => (
-              <div key={item.title} className="border border-slate-200 rounded-xl p-5 sm:p-6 hover:border-[#00C2FF] transition-colors bg-white">
-                <div className="w-8 h-0.5 bg-[#00C2FF] mb-3 sm:mb-4" />
-                <h3 className="font-bold text-[#0B1B4F] mb-2 text-sm sm:text-base">{item.title}</h3>
-                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+              { title: "Qualified Team", desc: "Technical experts and skilled manpower with extensive hands-on experience.", icon: Users },
+              { title: "Safety First", desc: "Zero-compromise safety protocols on marine and high-risk construction sites.", icon: ShieldCheck },
+              { title: "Quality Workmanship", desc: "Precision execution for RDSO approved welding, girders, and jetties.", icon: Award },
+              { title: "Timely Delivery", desc: "Punctual delivery for ports, shipyards, public sector and private contracts.", icon: Clock },
+            ].map((item) => {
+              const IconComp = item.icon;
+              return (
+                <div key={item.title} className="border border-slate-200 rounded-2xl p-5 sm:p-6 hover:border-[#00C2FF]/50 transition-all duration-300 bg-white hover:shadow-lg group">
+                  <div className="w-11 h-11 rounded-xl bg-[#0B1B4F]/5 border border-[#0B1B4F]/10 flex items-center justify-center text-[#0B1B4F] mb-4 group-hover:bg-[#0B1B4F] group-hover:text-[#00C2FF] group-hover:border-[#0B1B4F] transition-all duration-300 shadow-sm">
+                    <IconComp className="w-5.5 h-5.5" />
+                  </div>
+                  <h3 className="font-bold text-[#0B1B4F] mb-2 text-sm sm:text-base">{item.title}</h3>
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
