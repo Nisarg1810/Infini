@@ -153,42 +153,60 @@ export default function HomePage() {
 
       {/* ─── WHO WE ARE ─── */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+
+          {/* LEFT — text */}
           <div>
-            <p className="text-xs font-bold text-[#00C2FF] uppercase tracking-widest mb-3">About INFINI</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B4F] leading-snug mb-5">
-              Specialized Engineering Contractor Based in Mumbai
+            {/* Small badge */}
+            <span className="inline-flex items-center gap-1.5 border border-[#00C2FF]/40 text-[#00C2FF] text-[11px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+              ✦ Specialized Engineering Contractor
+            </span>
+
+            {/* Big heading */}
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#0B1B4F] leading-tight mb-8">
+              Strength in Engineering.<br />
+              Trust in Delivery.<br />
+              Built for India.
             </h2>
-            <p className="text-slate-600 leading-relaxed mb-5">
-              INFINI Infrastructure & Engineering Pvt. Ltd. is a turnkey engineering contractor specializing in Mechanical, Civil, and Marine infrastructure. We serve ports, shipyards, railways, and coastal development projects across India and the Middle East.
-            </p>
-            <ul className="space-y-3 text-sm text-slate-700">
-              {[
-                "RDSO Approved Alumina Thermit Rail Welding Contractor",
-                "Official Channel Partner — Visioncraft Metguard Coating",
-                "Floating Dock & Seaplane Platform Specialist",
-                "Port Crane Rail Fixture & Alignment Experts",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-2.5">
-                  <CheckCircle className="w-4 h-4 text-[#00C2FF] shrink-0 mt-0.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+
+            {/* Justified paragraphs */}
+            <div className="space-y-5 text-[15px] text-slate-600 leading-[1.85] text-justify">
+              <p>
+                INFINI Infrastructure & Engineering Pvt. Ltd. is a Mumbai-based turnkey engineering contractor with expertise spanning Mechanical, Civil, and Marine infrastructure. Founded by promoters with deep domain knowledge, we serve ports, shipyards, railways, and coastal development projects across India and the Middle East.
+              </p>
+              <p>
+                Our project portfolio includes crane rail fixture systems for container ports and shipyards, RDSO approved alumina thermit rail welding, RCC & PCC pre-cast girders, mass concrete jetty works, floating pontoon dock systems, seaplane landing platforms, and anti-corrosion coating supply & application. Every project is executed with precision, safety, and on-time delivery.
+              </p>
+              <p>
+                With a strong focus on quality workmanship, strict safety adherence, and long-term client relationships, INFINI Infra is committed to delivering engineering excellence that meets the standards of public sector authorities, port trusts, defense establishments, and private clients alike.
+              </p>
+            </div>
+
+            {/* Learn more link */}
             <Link
               href="/about/vision-mission"
-              className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0B1B4F] border-b-2 border-[#00C2FF] pb-0.5 hover:text-[#00C2FF] transition-colors"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#0B1B4F] border-b-2 border-[#00C2FF] pb-0.5 hover:text-[#00C2FF] transition-colors"
             >
-              Learn about us <ArrowRight className="w-4 h-4" />
+              Our Vision & Mission <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="rounded-xl overflow-hidden shadow-md">
-            <img
-              src="/images/marine_jetty.png"
-              alt="INFINI Infrastructure Engineering"
-              className="w-full h-80 object-cover"
-            />
+
+          {/* RIGHT — image with caption */}
+          <div className="relative">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+              <img
+                src="/images/marine_jetty.png"
+                alt="INFINI Infrastructure Engineering Projects"
+                className="w-full h-[420px] object-cover"
+              />
+              {/* Caption bar at bottom of image */}
+              <div className="bg-white px-5 py-3.5 flex items-center justify-between border-t border-slate-100">
+                <span className="text-sm font-semibold text-[#0B1B4F]">Floating Dock & Marine Infrastructure</span>
+                <span className="text-xs text-slate-400 font-medium">Tourism Sector</span>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
