@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -164,7 +165,7 @@ export default function HomePage() {
             className={`absolute inset-0 transition-opacity duration-1000 ${index === activeSlide ? "opacity-100" : "opacity-0 pointer-events-none"
               }`}
           >
-            <img src={slide.bgImage} alt={slide.title} className="w-full h-full object-cover object-center" />
+            <Image src={slide.bgImage} alt={slide.title} fill className="object-cover object-center" priority={index === 0} />
             <div className="absolute inset-0 bg-black/60 sm:bg-black/55" />
           </div>
         ))}
@@ -283,7 +284,7 @@ export default function HomePage() {
             <div className="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between hover:border-[#00C2FF] hover:-translate-y-1.5 transition-all duration-300">
               <div>
                 <div className="relative h-48 overflow-hidden">
-                  <img src="/images/crane_rail.png" alt="Mechanical Sector" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/images/crane_rail.png" alt="Mechanical Sector" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/85 to-transparent" />
                   <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Mechanical</span>
                 </div>
@@ -318,7 +319,7 @@ export default function HomePage() {
             <div className="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between hover:border-emerald-500 hover:-translate-y-1.5 transition-all duration-300">
               <div>
                 <div className="relative h-48 overflow-hidden">
-                  <img src="/images/civil_bridge.png" alt="Civil Sector" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/images/civil_bridge.png" alt="Civil Sector" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/85 to-transparent" />
                   <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Civil</span>
                 </div>
@@ -352,7 +353,7 @@ export default function HomePage() {
             <div className="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between hover:border-amber-500 hover:-translate-y-1.5 transition-all duration-300">
               <div>
                 <div className="relative h-48 overflow-hidden">
-                  <img src="/images/marine_jetty.png" alt="Tourism Sector" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/images/marine_jetty.png" alt="Tourism Sector" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/85 to-transparent" />
                   <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Tourism &amp; Marine</span>
                 </div>
@@ -385,8 +386,8 @@ export default function HomePage() {
       {/* ─── FLOATING DOCKS SPOTLIGHT ─── */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="rounded-2xl overflow-hidden shadow-md order-2 lg:order-1 border border-slate-200 hover:border-[#00C2FF]/40 transition-all duration-300">
-            <img src="/images/floating_dock.png" alt="Floating Dock Systems" className="w-full h-60 sm:h-80 object-cover" />
+          <div className="relative h-60 sm:h-80 rounded-2xl overflow-hidden shadow-md order-2 lg:order-1 border border-slate-200 hover:border-[#00C2FF]/40 transition-all duration-300">
+            <Image src="/images/floating_dock.png" alt="Floating Dock Systems" fill className="object-cover" />
           </div>
           <div className="order-1 lg:order-2">
             <span className="section-badge mb-4">Tourism &amp; Marine</span>
@@ -442,8 +443,8 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 hover:border-[#00C2FF]/40 transition-all duration-300">
-            <img src="/images/metguard_coating.png" alt="Metguard Coating" className="w-full h-60 sm:h-80 object-cover" />
+          <div className="relative h-60 sm:h-80 rounded-2xl overflow-hidden shadow-lg border border-white/10 hover:border-[#00C2FF]/40 transition-all duration-300">
+            <Image src="/images/metguard_coating.png" alt="Metguard Coating" fill className="object-cover" />
           </div>
         </div>
       </section>

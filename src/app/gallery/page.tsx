@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { Camera, ArrowRight, Anchor, Wrench, HardHat, Ship } from "lucide-react";
 
 export default function GalleryPage() {
@@ -66,6 +68,7 @@ export default function GalleryPage() {
     <div className="py-12 space-y-16">
       <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20">
         <div className="max-w-6xl mx-auto space-y-4">
+          <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-semibold">
             <Camera className="w-3.5 h-3.5" />
             PROJECT PORTFOLIO
@@ -101,10 +104,11 @@ export default function GalleryPage() {
           {filteredItems.map((item) => (
             <div key={item.id} className="glass-card group rounded-3xl overflow-hidden hover:border-[#00C2FF] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
               <div className="relative h-56 overflow-hidden">
-                <img 
+                <Image 
                   src={item.image} 
                   alt={item.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/90 via-transparent to-transparent"></div>
                 <div className="absolute top-4 left-4">

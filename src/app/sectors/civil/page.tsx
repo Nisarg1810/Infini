@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { HardHat, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -47,6 +48,7 @@ export default function CivilSectorPage() {
     <div className="py-12 space-y-16">
       <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20">
         <div className="max-w-6xl mx-auto space-y-4">
+          <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <HardHat className="w-3.5 h-3.5" />
             CIVIL SECTOR

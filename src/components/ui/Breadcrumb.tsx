@@ -10,10 +10,10 @@ const segmentLabels: Record<string, string> = {
   mechanical: "Mechanical",
   civil: "Civil",
   tourism: "Tourism & Marine",
-  about: "About",
-  contact: "Contact",
-  career: "Career",
-  gallery: "Gallery",
+  about: "About Us",
+  contact: "Contact Us",
+  career: "Careers",
+  gallery: "Project Gallery",
   "crane-rail-fixtures": "Crane Rail Fixtures",
   "anti-corrosion-coating": "Anti-Corrosion Coating",
   "steel-aluminium-fabrication": "Steel & Aluminium Fabrication",
@@ -35,7 +35,7 @@ const segmentLabels: Record<string, string> = {
 // Segments that have no real page — skip them from the breadcrumb trail
 const skipSegments = new Set(["sectors"]);
 
-export default function Breadcrumb() {
+export default function Breadcrumb({ className = "" }: { className?: string }) {
   const pathname = usePathname();
 
   // Don't show breadcrumb on home page
@@ -58,27 +58,27 @@ export default function Breadcrumb() {
   if (crumbs.length > 0) crumbs[crumbs.length - 1].isLast = true;
 
   return (
-    <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-1">
-      <ol className="flex flex-wrap items-center gap-1 text-xs text-slate-500">
-        <li>
+    <nav aria-label="Breadcrumb" className={`mb-3 sm:mb-4 ${className}`}>
+      <ol className="flex flex-wrap items-center gap-1.5 text-xs sm:text-sm text-slate-300">
+        <li className="inline-flex items-center gap-1.5">
           <Link
             href="/"
-            className="inline-flex items-center gap-1 text-[#0B1B4F] font-semibold hover:text-[#00C2FF] transition-colors"
+            className="inline-flex items-center gap-1 text-slate-300 hover:text-white font-medium transition-colors"
           >
-            <Home className="w-3.5 h-3.5" />
+            <Home className="w-3.5 h-3.5 text-slate-400" />
             Home
           </Link>
         </li>
 
         {crumbs.map((crumb) => (
-          <li key={crumb.href} className="inline-flex items-center gap-1">
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+          <li key={crumb.href} className="inline-flex items-center gap-1.5">
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400/80 shrink-0" />
             {crumb.isLast ? (
-              <span className="text-slate-400 font-medium">{crumb.label}</span>
+              <span className="text-white font-semibold">{crumb.label}</span>
             ) : (
               <Link
                 href={crumb.href}
-                className="text-[#0B1B4F] font-semibold hover:text-[#00C2FF] transition-colors"
+                className="text-slate-300 hover:text-white font-medium transition-colors"
               >
                 {crumb.label}
               </Link>
@@ -89,3 +89,4 @@ export default function Breadcrumb() {
     </nav>
   );
 }
+

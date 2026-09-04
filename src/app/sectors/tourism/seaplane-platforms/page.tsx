@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { Ship, CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function SeaplanePlatformsPage() {
@@ -6,6 +7,7 @@ export default function SeaplanePlatformsPage() {
     <div className="py-12 space-y-16">
       <section className="bg-infini-navy text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-infini-amber/20">
         <div className="max-w-7xl mx-auto space-y-4">
+          <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-infini-amber/10 border border-infini-amber/30 text-infini-amber text-xs font-semibold">
             <Ship className="w-3.5 h-3.5" />
             TOURISM SECTOR

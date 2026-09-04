@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { Mail, Phone, MapPin, Send, CheckCircle2, Globe, Clock, ExternalLink, ShieldCheck, Building2, AlertCircle } from "lucide-react";
 
 export default function ContactPage() {
@@ -119,6 +120,7 @@ export default function ContactPage() {
       <section className="bg-[#0B1B4F] text-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#00C2FF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
         <div className="max-w-6xl mx-auto space-y-4 relative z-10">
+          <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-bold uppercase tracking-wider backdrop-blur-md">
             <Mail className="w-3.5 h-3.5" />
             GET IN TOUCH

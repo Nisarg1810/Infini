@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { HardHat, CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function RCCPCCGirdersPage() {
@@ -6,6 +7,7 @@ export default function RCCPCCGirdersPage() {
     <div className="py-12 space-y-16">
       <section className="bg-infini-navy text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-infini-emerald/20">
         <div className="max-w-7xl mx-auto space-y-4">
+          <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-infini-emerald/10 border border-infini-emerald/30 text-infini-emerald text-xs font-semibold">
             <HardHat className="w-3.5 h-3.5" />
             CIVIL SECTOR

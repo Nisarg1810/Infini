@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import {
   Newspaper,
   Calendar,
@@ -119,6 +120,7 @@ export default function MediaNewsPage() {
       <section className="bg-[#0B1B4F] text-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#00C2FF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
         <div className="max-w-6xl mx-auto space-y-4 relative z-10">
+          <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
             <Newspaper className="w-3.5 h-3.5" />
             MEDIA &amp; CORPORATE NEWS

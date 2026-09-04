@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { Wrench, CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function RailwaySidingWorksPage() {
@@ -8,15 +10,18 @@ export default function RailwaySidingWorksPage() {
       {/* Hero Banner with Realistic Image Background */}
       <section className="relative text-white py-20 px-4 sm:px-6 lg:px-8 border-b border-infini-cyan/20 overflow-hidden min-h-[45vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src="/images/railway_siding.png" 
             alt="Railway Siding Construction" 
-            className="w-full h-full object-cover filter brightness-75"
+            fill
+            className="object-cover brightness-75"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-infini-navy-dark/95 via-infini-navy/85 to-infini-navy-dark/75"></div>
         </div>
 
         <div className="max-w-7xl mx-auto space-y-4 relative z-10">
+          <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-infini-cyan/20 border border-infini-cyan/40 text-infini-cyan text-xs font-semibold backdrop-blur-md">
             <Wrench className="w-3.5 h-3.5" />
             MECHANICAL SECTOR

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Menu,
@@ -91,14 +92,17 @@ export default function Navbar() {
 
           {/* Logo — Big and Centered on Mobile, Static Left on Desktop */}
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center shrink-0 group z-10">
-            <img
+            <Image
               src="/images/logo.jpg"
               alt="INFINI Infrastructure & Engineering Pvt. Ltd."
+              width={320}
+              height={80}
               className={`w-auto object-contain transition-all duration-300 group-hover:scale-[1.02] ${
                 scrolled
                   ? "h-11 xs:h-12 sm:h-14 lg:h-14 max-w-[180px] xs:max-w-[220px] sm:max-w-[300px] lg:max-w-[320px]"
                   : "h-16 xs:h-20 sm:h-24 lg:h-20 max-w-[240px] xs:max-w-[300px] sm:max-w-[400px] lg:max-w-[400px]"
               }`}
+              priority
             />
           </Link>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { Users, Briefcase, CheckCircle2, Send, Upload, Award, AlertCircle } from "lucide-react";
 
 export default function CareerPage() {
@@ -76,6 +77,7 @@ export default function CareerPage() {
       {/* Header Banner */}
       <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20">
         <div className="max-w-6xl mx-auto space-y-4">
+          <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-semibold">
             <Users className="w-3.5 h-3.5" />
             CAREERS &amp; TALENT

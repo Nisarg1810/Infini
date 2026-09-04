@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { Compass, Target, ShieldCheck, Sparkles, Award, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function VisionMissionPage() {
       {/* Header Banner */}
       <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20">
         <div className="max-w-6xl mx-auto space-y-4">
+          <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-semibold">
             <Compass className="w-3.5 h-3.5" />
             ABOUT US
