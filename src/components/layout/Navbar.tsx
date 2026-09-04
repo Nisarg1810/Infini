@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   Menu,
@@ -48,17 +48,37 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<DropdownKey>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleMouseEnter = (key: DropdownKey) => setOpenDropdown(key);
   const handleMouseLeave = () => setOpenDropdown(null);
 
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="sticky top-0 z-50 w-full transition-all duration-300">
 
 
       {/* ── MAIN WHITE NAVBAR ── */}
-      <nav className="bg-white shadow-md border-b border-slate-100 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto relative flex items-center justify-between h-[88px] sm:h-[96px] lg:h-[84px] gap-4 px-1 sm:px-0">
+      <nav className={`px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
+        scrolled 
+          ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200" 
+          : "bg-white shadow-md border-b border-slate-100"
+      }`}>
+        <div className={`max-w-6xl mx-auto relative flex items-center justify-between gap-4 px-1 sm:px-0 transition-all duration-300 ${
+          scrolled ? "h-[58px] sm:h-[64px] lg:h-[64px]" : "h-[88px] sm:h-[96px] lg:h-[84px]"
+        }`}>
 
           {/* Mobile Menu Toggle — Left Corner */}
           <button
@@ -66,7 +86,7 @@ export default function Navbar() {
             className="lg:hidden text-[#0B1B4F] hover:text-[#00C2FF] p-2 transition-colors z-20"
             aria-label="Toggle Navigation"
           >
-            {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
           {/* Logo — Big and Centered on Mobile, Static Left on Desktop */}
@@ -74,7 +94,11 @@ export default function Navbar() {
             <img
               src="/images/logo.jpg"
               alt="INFINI Infrastructure & Engineering Pvt. Ltd."
-              className="h-16 xs:h-20 sm:h-24 lg:h-20 w-auto max-w-[240px] xs:max-w-[300px] sm:max-w-[400px] lg:max-w-[400px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className={`w-auto object-contain transition-all duration-300 group-hover:scale-[1.02] ${
+                scrolled
+                  ? "h-11 xs:h-12 sm:h-14 lg:h-14 max-w-[180px] xs:max-w-[220px] sm:max-w-[300px] lg:max-w-[320px]"
+                  : "h-16 xs:h-20 sm:h-24 lg:h-20 max-w-[240px] xs:max-w-[300px] sm:max-w-[400px] lg:max-w-[400px]"
+              }`}
             />
           </Link>
 

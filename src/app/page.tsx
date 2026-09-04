@@ -72,9 +72,8 @@ export default function HomePage() {
         {heroSlides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === activeSlide ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ${index === activeSlide ? "opacity-100" : "opacity-0 pointer-events-none"
+              }`}
           >
             <img src={slide.bgImage} alt={slide.title} className="w-full h-full object-cover object-center" />
             <div className="absolute inset-0 bg-black/60 sm:bg-black/55" />
@@ -95,13 +94,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
             <Link
               href={heroSlides[activeSlide].ctaLink}
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#00C2FF]/25 backdrop-blur-md border border-[#00C2FF]/60 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-[#00C2FF] hover:text-[#0B1B4F] hover:border-[#00C2FF] hover:shadow-xl hover:scale-105 transition-all duration-300 gap-2 shadow-md"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#00C2FF] text-[#0B1B4F] font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:shadow-xl transition-all duration-300 gap-2 shadow-lg"
             >
               {heroSlides[activeSlide].ctaText} <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/40 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:text-[#0B1B4F] hover:border-white hover:shadow-xl hover:scale-105 transition-all duration-300 text-center shadow-md"
+              className="w-full sm:w-auto inline-flex items-center justify-center border-2 border-white/80 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:text-[#0B1B4F] transition-all duration-300 text-center shadow-lg"
             >
               Contact Us
             </Link>
@@ -139,19 +138,16 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4">
           {[
             { value: "100+", label: "Turnkey Projects" },
-            { value: "4+",   label: "States & Middle East" },
+            { value: "4+", label: "States & Middle East" },
             { value: "RDSO", label: "Approved Welding" },
             { value: "100%", label: "On-Time Execution" },
           ].map((s, idx) => (
             <div
               key={s.label}
-              className={`py-6 px-4 sm:px-6 text-center ${
-                idx % 2 === 0 ? "border-r border-white/10" : ""
-              } ${
-                idx < 2 ? "border-b border-white/10 md:border-b-0" : ""
-              } ${
-                idx < 3 ? "md:border-r md:border-white/10" : "md:border-r-0"
-              }`}
+              className={`py-6 px-4 sm:px-6 text-center ${idx % 2 === 0 ? "border-r border-white/10" : ""
+                } ${idx < 2 ? "border-b border-white/10 md:border-b-0" : ""
+                } ${idx < 3 ? "md:border-r md:border-white/10" : "md:border-r-0"
+                }`}
             >
               <div className="text-2xl sm:text-3xl font-bold text-[#00C2FF]">{s.value}</div>
               <div className="text-xs sm:text-xs text-white/70 mt-1 font-medium">{s.label}</div>
@@ -388,10 +384,10 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {[
-              { title: "Qualified Team",       desc: "Technical experts and skilled manpower with extensive hands-on experience." },
-              { title: "Safety First",         desc: "Zero-compromise safety protocols on marine and high-risk construction sites." },
-              { title: "Quality Workmanship",  desc: "Precision execution for RDSO approved welding, girders, and jetties." },
-              { title: "Timely Delivery",      desc: "Punctual delivery for ports, shipyards, public sector and private contracts." },
+              { title: "Qualified Team", desc: "Technical experts and skilled manpower with extensive hands-on experience." },
+              { title: "Safety First", desc: "Zero-compromise safety protocols on marine and high-risk construction sites." },
+              { title: "Quality Workmanship", desc: "Precision execution for RDSO approved welding, girders, and jetties." },
+              { title: "Timely Delivery", desc: "Punctual delivery for ports, shipyards, public sector and private contracts." },
             ].map((item) => (
               <div key={item.title} className="border border-slate-200 rounded-xl p-5 sm:p-6 hover:border-[#00C2FF] transition-colors bg-white">
                 <div className="w-8 h-0.5 bg-[#00C2FF] mb-3 sm:mb-4" />
