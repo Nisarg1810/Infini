@@ -275,10 +275,7 @@ export default function Navbar() {
                     : "text-[#0B1B4F] hover:bg-slate-100"
                 }`}
               >
-                <div className="flex items-center gap-2.5">
-                  <Info className="w-4 h-4 text-slate-500" />
-                  <span>About Us</span>
-                </div>
+                <span>About Us</span>
                 {mobileExpanded === "about" ? (
                   <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
                 ) : (
@@ -312,10 +309,7 @@ export default function Navbar() {
                     : "text-[#0B1B4F] hover:bg-slate-100"
                 }`}
               >
-                <div className="flex items-center gap-2.5">
-                  <Wrench className="w-4 h-4 text-slate-500" />
-                  <span>Mechanical Sector</span>
-                </div>
+                <span>Mechanical Sector</span>
                 {mobileExpanded === "mechanical" ? (
                   <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
                 ) : (
@@ -349,10 +343,7 @@ export default function Navbar() {
                     : "text-[#0B1B4F] hover:bg-slate-100"
                 }`}
               >
-                <div className="flex items-center gap-2.5">
-                  <HardHat className="w-4 h-4 text-slate-500" />
-                  <span>Civil Sector</span>
-                </div>
+                <span>Civil Sector</span>
                 {mobileExpanded === "civil" ? (
                   <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
                 ) : (
@@ -386,10 +377,7 @@ export default function Navbar() {
                     : "text-[#0B1B4F] hover:bg-slate-100"
                 }`}
               >
-                <div className="flex items-center gap-2.5">
-                  <Ship className="w-4 h-4 text-slate-500" />
-                  <span>Tourism &amp; Marine Sector</span>
-                </div>
+                <span>Tourism &amp; Marine Sector</span>
                 {mobileExpanded === "tourism" ? (
                   <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
                 ) : (
@@ -419,7 +407,6 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-bold text-[#0B1B4F] hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] transition-all"
             >
-              <Sparkles className="w-4 h-4 text-slate-500" />
               <span>Project Gallery</span>
             </Link>
 
@@ -429,7 +416,6 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-bold text-[#0B1B4F] hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] transition-all"
             >
-              <Award className="w-4 h-4 text-slate-500" />
               <span>Careers</span>
             </Link>
 
