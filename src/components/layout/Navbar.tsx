@@ -106,14 +106,14 @@ export default function Navbar() {
 
       {/* ── MAIN WHITE NAVBAR ── */}
       <nav className="bg-white shadow-md border-b border-slate-100 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex items-center justify-between h-[68px] gap-4">
+        <div className="max-w-7xl mx-auto relative flex items-center h-[72px] lg:h-[68px] lg:justify-between gap-4">
 
-          {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0 group">
+          {/* Logo — absolutely centered on mobile, static left on desktop */}
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center group">
             <img
               src="/images/logo.jpg"
               alt="INFINI Infrastructure & Engineering Pvt. Ltd."
-              className="h-12 sm:h-14 w-auto max-w-[240px] sm:max-w-[300px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-14 sm:h-16 lg:h-14 w-auto max-w-[260px] sm:max-w-[320px] lg:max-w-[300px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </Link>
 
@@ -246,7 +246,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA + Mobile Toggle */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="ml-auto lg:ml-0 flex items-center gap-3 shrink-0">
             <Link
               href="/contact"
               className="hidden lg:inline-flex items-center gap-1.5 bg-[#0B1B4F] text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full shadow-md hover:bg-[#00C2FF] hover:text-[#0B1B4F] transition-all duration-300"
