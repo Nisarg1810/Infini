@@ -5,16 +5,18 @@ import { Wrench, CheckCircle2, ArrowRight, ShieldCheck, PhoneCall } from "lucide
 export default function CraneRailFixturesPage() {
   return (
     <div className="py-12 space-y-16">
-      <section className="bg-infini-navy text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-infini-cyan/20">
-        <div className="max-w-7xl mx-auto space-y-4">
+      {/* ─── HEADER BANNER ─── */}
+      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#00C2FF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+        <div className="max-w-7xl mx-auto space-y-4 relative z-10">
           <Breadcrumb />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-infini-cyan/10 border border-infini-cyan/30 text-infini-cyan text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-semibold">
             <Wrench className="w-3.5 h-3.5" />
             MECHANICAL SECTOR
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight">Crane Rail Fixtures – Supply & Installation</h1>
-          <p className="text-slate-300 text-sm max-w-2xl">
-            Turnkey supply, engineering alignment, fixing, and installation works for heavy crane rails across Ports, Shipyards, Container Terminals, Steel & Cement Plants.
+          <h1 className="text-4xl font-extrabold tracking-tight">Crane Rail Fixtures – Supply &amp; Installation</h1>
+          <p className="text-slate-300 text-sm max-w-2xl leading-relaxed">
+            Turnkey supply, engineering alignment, fixing, and installation works for heavy crane rails across Ports, Shipyards, Container Terminals, Steel &amp; Cement Plants.
           </p>
         </div>
       </section>
