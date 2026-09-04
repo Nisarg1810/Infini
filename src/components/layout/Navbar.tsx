@@ -299,7 +299,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* MECHANICAL SECTOR */}
+            {/* MECHANICAL */}
             <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === "mechanical" ? null : "mechanical")}
@@ -309,7 +309,7 @@ export default function Navbar() {
                     : "text-[#0B1B4F] hover:bg-slate-100"
                 }`}
               >
-                <span>MECHANICAL SECTOR</span>
+                <span>MECHANICAL</span>
                 {mobileExpanded === "mechanical" ? (
                   <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
                 ) : (
@@ -333,7 +333,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* CIVIL SECTOR */}
+            {/* CIVIL */}
             <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === "civil" ? null : "civil")}
@@ -343,7 +343,7 @@ export default function Navbar() {
                     : "text-[#0B1B4F] hover:bg-slate-100"
                 }`}
               >
-                <span>CIVIL SECTOR</span>
+                <span>CIVIL</span>
                 {mobileExpanded === "civil" ? (
                   <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
                 ) : (
@@ -367,7 +367,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* TOURISM & MARINE SECTOR */}
+            {/* TOURISM & MARINE */}
             <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === "tourism" ? null : "tourism")}
@@ -377,7 +377,7 @@ export default function Navbar() {
                     : "text-[#0B1B4F] hover:bg-slate-100"
                 }`}
               >
-                <span>TOURISM &amp; MARINE SECTOR</span>
+                <span>TOURISM</span>
                 {mobileExpanded === "tourism" ? (
                   <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
                 ) : (
