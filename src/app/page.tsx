@@ -477,6 +477,76 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─── ACCREDITATIONS & APPROVALS ─── */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8 text-center">
+            <span className="section-badge mb-3">Certifications</span>
+            <h2 className="section-heading">Accreditations &amp; Approvals</h2>
+            <p className="text-slate-500 text-sm max-w-xl mx-auto mt-2 leading-relaxed">
+              Our credentials that build trust with port authorities, railways, and government clients.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+            {/* RDSO */}
+            <div className="glass-card p-6 rounded-2xl border-l-4 border-l-[#00C2FF] hover:border-[#00C2FF] hover:-translate-y-1.5 transition-all duration-300 group space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-[#00C2FF]/10 border border-[#00C2FF]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <ShieldCheck className="w-6 h-6 text-[#00C2FF]" />
+              </div>
+              <div>
+                <div className="text-[10px] font-extrabold tracking-[0.15em] text-[#00C2FF] uppercase mb-1">RDSO Approved</div>
+                <h3 className="font-extrabold text-[#0B1B4F] text-sm leading-snug">Alumina Thermit Welding Contractor</h3>
+                <p className="text-[11px] text-slate-500 mt-1 italic">Research Designs &amp; Standards Organisation — Ministry of Railways, Govt. of India</p>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                All welding crews certified and licensed by RDSO. Works executed strictly per approved procedures at ports, industrial sidings &amp; container terminals.
+              </p>
+            </div>
+
+            {/* Metguard */}
+            <div className="glass-card p-6 rounded-2xl border-l-4 border-l-amber-500 hover:border-amber-500 hover:-translate-y-1.5 transition-all duration-300 group space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Award className="w-6 h-6 text-amber-500" />
+              </div>
+              <div>
+                <div className="text-[10px] font-extrabold tracking-[0.15em] text-amber-500 uppercase mb-1">Official Channel Partner</div>
+                <h3 className="font-extrabold text-[#0B1B4F] text-sm leading-snug">Visioncraft Industries — Metguard Coating</h3>
+                <p className="text-[11px] text-slate-500 mt-1 italic">Maharashtra · Gujarat · Goa · Andhra Pradesh · Middle East</p>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Authorised marketing &amp; BD associate for Metguard anti-corrosion protective coating for marine, industrial &amp; infrastructure steel structures.
+              </p>
+            </div>
+
+            {/* Registered Company */}
+            <div className="glass-card p-6 rounded-2xl border-l-4 border-l-emerald-500 hover:border-emerald-500 hover:-translate-y-1.5 transition-all duration-300 group space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <CheckCircle className="w-6 h-6 text-emerald-500" />
+              </div>
+              <div>
+                <div className="text-[10px] font-extrabold tracking-[0.15em] text-emerald-500 uppercase mb-1">Registered Pvt. Ltd.</div>
+                <h3 className="font-extrabold text-[#0B1B4F] text-sm leading-snug">Ministry of Corporate Affairs, India</h3>
+                <p className="text-[11px] text-slate-500 mt-1 italic">Companies Act, 2013 — CIN Registered · GST &amp; PAN Compliant</p>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Incorporated under MCA with full statutory compliance including GST registration, Income Tax PAN, and annual statutory filings maintained.
+              </p>
+            </div>
+          </div>
+
+          {/* Learn more link */}
+          <div className="text-center">
+            <Link
+              href="/about/media-news"
+              className="inline-flex items-center gap-2 text-[#0B1B4F] font-bold text-sm border border-[#0B1B4F]/20 px-5 py-2.5 rounded-full hover:bg-[#0B1B4F] hover:text-white hover:border-[#0B1B4F] transition-all duration-300"
+            >
+              View All Certifications &amp; News <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ─── CTA BANNER ─── */}
       <section className="py-10 sm:py-14 px-4 sm:px-6 lg:px-8 bg-slate-50 border-t border-slate-200">
         <div className="max-w-4xl mx-auto text-center">
