@@ -95,13 +95,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
             <Link
               href={heroSlides[activeSlide].ctaLink}
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#00C2FF] text-[#0B1B4F] font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:shadow-xl transition-all duration-300 gap-2 shadow-lg"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#00C2FF]/25 backdrop-blur-md border border-[#00C2FF]/60 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-[#00C2FF] hover:text-[#0B1B4F] hover:border-[#00C2FF] hover:shadow-xl hover:scale-105 transition-all duration-300 gap-2 shadow-md"
             >
               {heroSlides[activeSlide].ctaText} <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center border-2 border-white/80 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:text-[#0B1B4F] transition-all duration-300 text-center shadow-lg"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/40 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:text-[#0B1B4F] hover:border-white hover:shadow-xl hover:scale-105 transition-all duration-300 text-center shadow-md"
             >
               Contact Us
             </Link>
