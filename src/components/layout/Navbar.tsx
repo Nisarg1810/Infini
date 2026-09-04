@@ -58,14 +58,14 @@ export default function Navbar() {
 
       {/* ── MAIN WHITE NAVBAR ── */}
       <nav className="bg-white shadow-md border-b border-slate-100 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto relative flex items-center h-[88px] lg:h-[84px] lg:justify-between gap-4">
+        <div className="max-w-6xl mx-auto relative flex items-center justify-between h-[72px] sm:h-[84px] gap-4">
 
-          {/* Logo — absolutely centered on mobile, static left on desktop */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center group">
+          {/* Logo — Left aligned and scaled cleanly for mobile & desktop */}
+          <Link href="/" className="flex items-center shrink-0 group">
             <img
               src="/images/logo.jpg"
               alt="INFINI Infrastructure & Engineering Pvt. Ltd."
-              className="h-20 sm:h-24 lg:h-20 w-auto max-w-[300px] sm:max-w-[380px] lg:max-w-[400px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-12 sm:h-16 lg:h-20 w-auto max-w-[200px] xs:max-w-[250px] sm:max-w-[350px] lg:max-w-[400px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </Link>
 

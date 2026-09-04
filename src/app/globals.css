@@ -150,9 +150,9 @@
 /* Large serif section heading */
 .section-heading {
   font-family: var(--font-serif, Georgia, serif);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.6rem, 4.5vw, 2.75rem);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.25;
   color: #0B1B4F;
   letter-spacing: -0.01em;
 }

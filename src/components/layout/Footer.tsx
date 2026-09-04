@@ -19,11 +19,11 @@ export default function Footer() {
 
           {/* BRAND COLUMN WITH LOGO & CONTACT DETAILS */}
           <div className="lg:col-span-4 space-y-5">
-            <div className="bg-white p-2.5 rounded-xl border border-white/20 shadow-md inline-block">
+            <div className="bg-white px-3.5 sm:px-4 py-2 rounded-xl border border-white/20 shadow-md inline-block max-w-full">
               <img
                 src="/images/logo.jpg"
                 alt="INFINI Infrastructure & Engineering Pvt. Ltd. Logo"
-                className="h-12 w-auto object-contain"
+                className="h-12 sm:h-16 w-auto max-w-[220px] sm:max-w-[280px] object-contain"
               />
             </div>
 
