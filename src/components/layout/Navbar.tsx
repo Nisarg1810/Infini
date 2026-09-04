@@ -43,9 +43,9 @@ const tourismLinks = [
 ];
 
 const aboutLinks = [
-  { label: "Vision, Mission & Core Values", href: "/about/vision-mission", icon: <Sparkles className="w-4 h-4 text-[#00C2FF]" /> },
-  { label: "Why INFINI Infra", href: "/about/why-infini", icon: <Award className="w-4 h-4 text-[#22C55E]" /> },
-  { label: "Media, Press & News", href: "/about/media-news", icon: <Info className="w-4 h-4 text-[#F97316]" /> },
+  { label: "Vision, Mission & Core Values", href: "/about/vision-mission" },
+  { label: "Why INFINI Infra", href: "/about/why-infini" },
+  { label: "Media, Press & News", href: "/about/media-news" },
 ];
 
 type DropdownKey = "about" | "mechanical" | "civil" | "tourism" | null;
@@ -144,9 +144,8 @@ export default function Navbar() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-slate-700 hover:text-[#00C2FF] hover:bg-slate-50 transition-all"
+                      className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:text-[#00C2FF] hover:bg-slate-50 transition-all border-l-2 border-transparent hover:border-[#00C2FF] mx-2 rounded-r-md"
                     >
-                      {item.icon}
                       {item.label}
                     </Link>
                   ))}
@@ -297,9 +296,9 @@ export default function Navbar() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#00C2FF]"
+                      className="block px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#00C2FF]"
                     >
-                      {item.icon} {item.label}
+                      {item.label}
                     </Link>
                   ))}
                 </div>
