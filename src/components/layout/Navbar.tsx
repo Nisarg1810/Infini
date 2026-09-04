@@ -58,7 +58,7 @@ export default function Navbar() {
 
       {/* ── MAIN WHITE NAVBAR ── */}
       <nav className="bg-white shadow-md border-b border-slate-100 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto relative flex items-center h-[88px] lg:h-[84px] lg:justify-between gap-4">
+        <div className="max-w-6xl mx-auto relative flex items-center h-[88px] lg:h-[84px] lg:justify-between gap-4">
 
           {/* Logo — absolutely centered on mobile, static left on desktop */}
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center group">

@@ -8,7 +8,12 @@
   }
   body {
     @apply bg-slate-50 text-slate-800 antialiased selection:bg-infini-cyan selection:text-infini-navy;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif, Georgia, 'Times New Roman', serif);
+    letter-spacing: -0.01em;
   }
 
   /* Accessibility & Focus-Visible Standards (WCAG 2.2 AA) */
@@ -107,4 +112,59 @@
 
 .hero-dot-inactive:hover {
   background: rgba(255,255,255,0.65);
+}
+
+/* ── JALPEX-STYLE SECTION TYPOGRAPHY ── */
+
+/* Pill badge: "• LABEL TEXT" style */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 194, 255, 0.35);
+  background: rgba(0, 194, 255, 0.08);
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0B1B4F;
+}
+
+.section-badge::before {
+  content: '•';
+  font-size: 14px;
+  color: #00C2FF;
+  line-height: 1;
+}
+
+/* Dark variant for dark-background sections */
+.section-badge-dark {
+  border-color: rgba(0, 194, 255, 0.4);
+  background: rgba(0, 194, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Large serif section heading */
+.section-heading {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #0B1B4F;
+  letter-spacing: -0.01em;
+}
+
+.section-heading-dark {
+  color: #ffffff;
+}
+
+/* Sub-heading body copy under section headings */
+.section-body {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #475569;
 }

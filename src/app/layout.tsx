@@ -1,7 +1,21 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "INFINI Infrastructure & Engineering Pvt. Ltd. | Turnkey Engineering",
@@ -18,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen bg-slate-50 text-slate-800 font-sans antialiased">
+      <body className={`flex flex-col min-h-screen bg-slate-50 text-slate-800 antialiased ${cormorant.variable} ${inter.variable}`}>
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

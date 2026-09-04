@@ -153,60 +153,42 @@ export default function HomePage() {
 
       {/* ─── WHO WE ARE ─── */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-
-          {/* LEFT — text */}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            {/* Small badge */}
-            <span className="inline-flex items-center gap-1.5 border border-[#00C2FF]/40 text-[#00C2FF] text-[11px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
-              ✦ Specialized Engineering Contractor
-            </span>
-
-            {/* Big heading */}
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0B1B4F] leading-tight mb-8">
-              Strength in Engineering.<br />
-              Trust in Delivery.<br />
-              Built for India.
+            <span className="section-badge mb-4">About INFINI</span>
+            <h2 className="section-heading mb-5">
+              Specialized Engineering Contractor Based in Mumbai
             </h2>
-
-            {/* Justified paragraphs */}
-            <div className="space-y-5 text-[15px] text-slate-600 leading-[1.85] text-justify">
-              <p>
-                INFINI Infrastructure & Engineering Pvt. Ltd. is a Mumbai-based turnkey engineering contractor with expertise spanning Mechanical, Civil, and Marine infrastructure. Founded by promoters with deep domain knowledge, we serve ports, shipyards, railways, and coastal development projects across India and the Middle East.
-              </p>
-              <p>
-                Our project portfolio includes crane rail fixture systems for container ports and shipyards, RDSO approved alumina thermit rail welding, RCC & PCC pre-cast girders, mass concrete jetty works, floating pontoon dock systems, seaplane landing platforms, and anti-corrosion coating supply & application. Every project is executed with precision, safety, and on-time delivery.
-              </p>
-              <p>
-                With a strong focus on quality workmanship, strict safety adherence, and long-term client relationships, INFINI Infra is committed to delivering engineering excellence that meets the standards of public sector authorities, port trusts, defense establishments, and private clients alike.
-              </p>
-            </div>
-
-            {/* Learn more link */}
+            <p className="text-slate-600 leading-relaxed mb-5">
+              INFINI Infrastructure & Engineering Pvt. Ltd. is a turnkey engineering contractor specializing in Mechanical, Civil, and Marine infrastructure. We serve ports, shipyards, railways, and coastal development projects across India and the Middle East.
+            </p>
+            <ul className="space-y-3 text-sm text-slate-700">
+              {[
+                "RDSO Approved Alumina Thermit Rail Welding Contractor",
+                "Official Channel Partner — Visioncraft Metguard Coating",
+                "Floating Dock & Seaplane Platform Specialist",
+                "Port Crane Rail Fixture & Alignment Experts",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5">
+                  <CheckCircle className="w-4 h-4 text-[#00C2FF] shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
             <Link
               href="/about/vision-mission"
-              className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#0B1B4F] border-b-2 border-[#00C2FF] pb-0.5 hover:text-[#00C2FF] transition-colors"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0B1B4F] border-b-2 border-[#00C2FF] pb-0.5 hover:text-[#00C2FF] transition-colors"
             >
-              Our Vision & Mission <ArrowRight className="w-4 h-4" />
+              Learn about us <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-
-          {/* RIGHT — image with caption */}
-          <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-              <img
-                src="/images/marine_jetty.png"
-                alt="INFINI Infrastructure Engineering Projects"
-                className="w-full h-[420px] object-cover"
-              />
-              {/* Caption bar at bottom of image */}
-              <div className="bg-white px-5 py-3.5 flex items-center justify-between border-t border-slate-100">
-                <span className="text-sm font-semibold text-[#0B1B4F]">Floating Dock & Marine Infrastructure</span>
-                <span className="text-xs text-slate-400 font-medium">Tourism Sector</span>
-              </div>
-            </div>
+          <div className="rounded-xl overflow-hidden shadow-md">
+            <img
+              src="/images/marine_jetty.png"
+              alt="INFINI Infrastructure Engineering"
+              className="w-full h-80 object-cover"
+            />
           </div>
-
         </div>
       </section>
 
@@ -214,72 +196,106 @@ export default function HomePage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 border-y border-slate-200">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
-            <p className="text-xs font-bold text-[#00C2FF] uppercase tracking-widest mb-2">What We Do</p>
-            <h2 className="text-3xl font-bold text-[#0B1B4F]">Our Core Sectors</h2>
+            <span className="section-badge mb-3">What We Do</span>
+            <h2 className="section-heading">Our Core Sectors</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Mechanical */}
-            <div className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
-              <div className="relative h-48 overflow-hidden">
-                <img src="/images/crane_rail.png" alt="Mechanical Sector" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/80 to-transparent" />
-                <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Mechanical</span>
+            <div className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between">
+              <div>
+                <div className="relative h-48 overflow-hidden">
+                  <img src="/images/crane_rail.png" alt="Mechanical Sector" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/80 to-transparent" />
+                  <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Mechanical</span>
+                </div>
+                <div className="p-5">
+                  <ul className="space-y-2 text-sm text-slate-600">
+                    {[
+                      { label: "Crane Rail Fixtures", href: "/sectors/mechanical/crane-rail-fixtures" },
+                      { label: "Anti Corrosion Coating", href: "/sectors/mechanical/anti-corrosion-coating" },
+                      { label: "Steel & Aluminium Fabrication", href: "/sectors/mechanical/steel-aluminium-fabrication" },
+                      { label: "Land & Rail Survey", href: "/sectors/mechanical/land-rail-survey" },
+                      { label: "Thermit Rail Welding", href: "/sectors/mechanical/rdso-thermit-welding" },
+                      { label: "Railway Siding Works", href: "/sectors/mechanical/railway-siding-works" },
+                    ].map((s) => (
+                      <li key={s.href}>
+                        <Link href={s.href} className="flex items-center gap-2 hover:text-[#00C2FF] transition-colors group/item">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#00C2FF] shrink-0 group-hover/item:scale-125 transition-transform" />
+                          <span>{s.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="p-5">
-                <ul className="space-y-2 text-sm text-slate-600">
-                  {["Crane Rail Fixtures", "Anti Corrosion Coating", "Steel & Aluminium Fabrication", "Thermit Rail Welding", "Railway Siding Works"].map((s) => (
-                    <li key={s} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#00C2FF] shrink-0" />
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/sectors/mechanical" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B1B4F] hover:text-[#00C2FF] transition-colors">
+              <div className="p-5 pt-0">
+                <Link href="/sectors/mechanical" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B1B4F] hover:text-[#00C2FF] transition-colors">
                   View Sector <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
 
             {/* Civil */}
-            <div className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
-              <div className="relative h-48 overflow-hidden">
-                <img src="/images/civil_bridge.png" alt="Civil Sector" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/80 to-transparent" />
-                <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Civil</span>
+            <div className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between">
+              <div>
+                <div className="relative h-48 overflow-hidden">
+                  <img src="/images/civil_bridge.png" alt="Civil Sector" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/80 to-transparent" />
+                  <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Civil</span>
+                </div>
+                <div className="p-5">
+                  <ul className="space-y-2 text-sm text-slate-600">
+                    {[
+                      { label: "Jetty Works & Repairs", href: "/sectors/civil/jetty-works-repairs" },
+                      { label: "Paver Block Works", href: "/sectors/civil/paver-block-works" },
+                      { label: "Drainage Works", href: "/sectors/civil/drainage-works" },
+                      { label: "Mass Concrete Works", href: "/sectors/civil/mass-concrete-works" },
+                      { label: "RCC & PCC Girders", href: "/sectors/civil/rcc-pcc-girders" },
+                    ].map((s) => (
+                      <li key={s.href}>
+                        <Link href={s.href} className="flex items-center gap-2 hover:text-[#22C55E] transition-colors group/item">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] shrink-0 group-hover/item:scale-125 transition-transform" />
+                          <span>{s.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="p-5">
-                <ul className="space-y-2 text-sm text-slate-600">
-                  {["Jetty Works & Repairs", "Paver Block Works", "Drainage Works", "Mass Concrete Works", "RCC & PCC Girders"].map((s) => (
-                    <li key={s} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/sectors/civil" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B1B4F] hover:text-emerald-500 transition-colors">
+              <div className="p-5 pt-0">
+                <Link href="/sectors/civil" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B1B4F] hover:text-[#22C55E] transition-colors">
                   View Sector <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
 
             {/* Tourism */}
-            <div className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow group">
-              <div className="relative h-48 overflow-hidden">
-                <img src="/images/marine_jetty.png" alt="Tourism Sector" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/80 to-transparent" />
-                <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Tourism & Marine</span>
+            <div className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between">
+              <div>
+                <div className="relative h-48 overflow-hidden">
+                  <img src="/images/marine_jetty.png" alt="Tourism Sector" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/80 to-transparent" />
+                  <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Tourism & Marine</span>
+                </div>
+                <div className="p-5">
+                  <ul className="space-y-2 text-sm text-slate-600">
+                    {[
+                      { label: "Floating Docks & Jetties", href: "/sectors/tourism/floating-docks-jetties" },
+                      { label: "Seaplane Platforms", href: "/sectors/tourism/seaplane-platforms" },
+                    ].map((s) => (
+                      <li key={s.href}>
+                        <Link href={s.href} className="flex items-center gap-2 hover:text-[#F97316] transition-colors group/item">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0 group-hover/item:scale-125 transition-transform" />
+                          <span>{s.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="p-5">
-                <ul className="space-y-2 text-sm text-slate-600">
-                  {["Floating Docks & Platforms", "Seaplane Landing Platforms", "Naval Vessel Docking", "Marine Equipment Hiring"].map((s) => (
-                    <li key={s} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/sectors/tourism" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B1B4F] hover:text-amber-500 transition-colors">
+              <div className="p-5 pt-0">
+                <Link href="/sectors/tourism" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B1B4F] hover:text-[#F97316] transition-colors">
                   View Sector <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -295,9 +311,9 @@ export default function HomePage() {
             <img src="/images/floating_dock.png" alt="Floating Dock Systems" className="w-full h-80 object-cover" />
           </div>
           <div className="order-1 lg:order-2">
-            <p className="text-xs font-bold text-[#00C2FF] uppercase tracking-widest mb-3">Tourism & Marine</p>
-            <h2 className="text-3xl font-bold text-[#0B1B4F] mb-4 leading-snug">
-              Modular Floating Pontoon Jetties & Docking Systems
+            <span className="section-badge mb-4">Tourism &amp; Marine</span>
+            <h2 className="section-heading mb-4">
+              Modular Floating Pontoon Jetties &amp; Docking Systems
             </h2>
             <p className="text-slate-600 leading-relaxed mb-6">
               INFINI Infra delivers engineered floating dock solutions designed for fluctuating tidal waters, passenger ferry terminals, luxury yacht berths, and naval defense installations.
@@ -327,8 +343,8 @@ export default function HomePage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#0B1B4F]">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-white">
-            <p className="text-xs font-bold text-[#00C2FF] uppercase tracking-widest mb-3">Official Channel Partner</p>
-            <h2 className="text-3xl font-bold mb-4 leading-snug">
+            <span className="section-badge section-badge-dark mb-4">Official Channel Partner</span>
+            <h2 className="section-heading section-heading-dark mb-4">
               Visioncraft Metguard Anti-Corrosion Coating
             </h2>
             <p className="text-white/70 leading-relaxed mb-6">
@@ -358,8 +374,8 @@ export default function HomePage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
-            <p className="text-xs font-bold text-[#00C2FF] uppercase tracking-widest mb-2">Why Choose Us</p>
-            <h2 className="text-3xl font-bold text-[#0B1B4F]">What Sets INFINI Apart</h2>
+            <span className="section-badge mb-3">Why Choose Us</span>
+            <h2 className="section-heading">What Sets INFINI Apart</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
@@ -381,7 +397,7 @@ export default function HomePage() {
       {/* ─── CTA BANNER ─── */}
       <section className="py-14 px-4 sm:px-6 lg:px-8 bg-slate-50 border-t border-slate-200">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#0B1B4F] mb-3">Ready to Start Your Next Project?</h2>
+          <h2 className="section-heading mb-3">Ready to Start Your Next Project?</h2>
           <p className="text-slate-500 mb-7">
             Get in touch with our engineering leadership at NESCO IT Park, Goregaon East, Mumbai.
           </p>
