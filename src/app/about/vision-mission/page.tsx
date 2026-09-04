@@ -20,15 +20,16 @@ export default function VisionMissionPage() {
 
     <div className="py-12 space-y-16">
       
-      {/* Header Banner */}
-      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20">
-        <div className="max-w-6xl mx-auto space-y-4">
+      {/* ─── HEADER BANNER ─── */}
+      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#00C2FF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+        <div className="max-w-7xl mx-auto space-y-4 relative z-10">
           <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-semibold">
             <Compass className="w-3.5 h-3.5" />
             ABOUT US
           </div>
-          <h1 className="section-heading text-white text-4xl sm:text-5xl">Vision &amp; Mission</h1>
+          <h1 className="section-heading text-white text-4xl sm:text-5xl font-extrabold tracking-tight">Vision &amp; Mission</h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
             Empowering modern infrastructure through mechanical precision, marine dock engineering, and sustainable civil construction.
           </p>
@@ -36,7 +37,7 @@ export default function VisionMissionPage() {
       </section>
 
       {/* Vision & Mission Cards */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {/* OUR VISION */}
@@ -100,7 +101,7 @@ export default function VisionMissionPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#0B1B4F] text-white p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
           <div>
             <h3 className="text-xl font-bold">Explore Why Clients Choose INFINI Infra</h3>

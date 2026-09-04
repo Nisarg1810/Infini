@@ -46,21 +46,23 @@ export default function CivilSectorPage() {
 
   return (
     <div className="py-12 space-y-16">
-      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20">
-        <div className="max-w-6xl mx-auto space-y-4">
+      {/* ─── HEADER BANNER ─── */}
+      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#00C2FF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+        <div className="max-w-7xl mx-auto space-y-4 relative z-10">
           <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <HardHat className="w-3.5 h-3.5" />
             CIVIL SECTOR
           </div>
-          <h1 className="section-heading text-white text-4xl sm:text-5xl">Civil Engineering Sector</h1>
+          <h1 className="section-heading text-white text-4xl sm:text-5xl font-extrabold tracking-tight">Civil Engineering Sector</h1>
           <p className="text-slate-300 text-sm max-w-2xl leading-relaxed">
             Jetty construction, RCC/PCC girders, breakwater concrete positioning, paver blocks, and heavy civil works.
           </p>
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((item) => (
             <div key={item.id} id={item.id} className="glass-card-interactive p-8 rounded-3xl space-y-4 border-l-4 border-l-emerald-500 group hover:border-emerald-500">

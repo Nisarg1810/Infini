@@ -74,15 +74,16 @@ export default function CareerPage() {
   return (
     <div className="py-12 space-y-16">
       
-      {/* Header Banner */}
-      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20">
-        <div className="max-w-6xl mx-auto space-y-4">
+      {/* ─── HEADER BANNER ─── */}
+      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#00C2FF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+        <div className="max-w-7xl mx-auto space-y-4 relative z-10">
           <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-semibold">
             <Users className="w-3.5 h-3.5" />
             CAREERS &amp; TALENT
           </div>
-          <h1 className="section-heading text-white text-4xl sm:text-5xl">Join Our Engineering Team</h1>
+          <h1 className="section-heading text-white text-4xl sm:text-5xl font-extrabold tracking-tight">Join Our Engineering Team</h1>
           <p className="text-slate-300 text-sm max-w-2xl leading-relaxed">
             Build your career with INFINI Infrastructure &amp; Engineering Pvt. Ltd. We offer exceptional growth opportunities across mechanical, civil, railway, and marine engineering sectors.
           </p>
@@ -90,7 +91,7 @@ export default function CareerPage() {
       </section>
 
       {/* Main Career Content & Open Positions */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         {/* Left Column: Why Join & Open Roles */}
         <div className="lg:col-span-7 space-y-8">

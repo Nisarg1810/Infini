@@ -119,7 +119,7 @@ export default function ContactPage() {
       {/* ─── HEADER BANNER ─── */}
       <section className="bg-[#0B1B4F] text-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#00C2FF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
-        <div className="max-w-6xl mx-auto space-y-4 relative z-10">
+        <div className="max-w-7xl mx-auto space-y-4 relative z-10">
           <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-bold uppercase tracking-wider backdrop-blur-md">
             <Mail className="w-3.5 h-3.5" />
@@ -151,7 +151,7 @@ export default function ContactPage() {
       </section>
 
       {/* ─── MAIN CONTACT SECTION (INFO + FORM) ─── */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           {/* Left Column: Direct Contact Info */}
@@ -364,7 +364,7 @@ export default function ContactPage() {
       </section>
 
       {/* ─── LIVE LOCATION MAP SECTION ─── */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#0B1B4F] text-white rounded-3xl p-5 sm:p-8 border border-slate-800 space-y-4 shadow-xl relative overflow-hidden">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>

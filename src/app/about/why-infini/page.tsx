@@ -19,15 +19,16 @@ export default function WhyInfiniPage() {
   return (
     <div className="py-12 space-y-16">
       
-      {/* Header Banner */}
-      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20">
-        <div className="max-w-6xl mx-auto space-y-4">
+      {/* ─── HEADER BANNER ─── */}
+      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#00C2FF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+        <div className="max-w-7xl mx-auto space-y-4 relative z-10">
           <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <Award className="w-3.5 h-3.5" />
             WHY INFINI INFRA
           </div>
-          <h1 className="section-heading text-white text-4xl sm:text-5xl">Why Choose INFINI Infra</h1>
+          <h1 className="section-heading text-white text-4xl sm:text-5xl font-extrabold tracking-tight">Why Choose INFINI Infra</h1>
           <p className="text-slate-300 text-sm max-w-2xl leading-relaxed">
             Backed by experienced promoters, qualified engineering leadership, and a steadfast commitment to quality workmanship &amp; timely execution.
           </p>
@@ -35,7 +36,7 @@ export default function WhyInfiniPage() {
       </section>
 
       {/* Main Content & Features */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Leadership & Expertise Statement */}
         <div className="glass-card-dark text-white rounded-3xl p-8 sm:p-12 space-y-6">
@@ -107,7 +108,7 @@ export default function WhyInfiniPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#0B1B4F] text-white p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
           <div>
             <h3 className="text-xl font-bold">Interested in Joining Our Engineering Team?</h3>
