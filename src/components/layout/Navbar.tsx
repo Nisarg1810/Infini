@@ -259,23 +259,23 @@ export default function Navbar() {
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-bold text-[#0B1B4F] hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] transition-all"
+              className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-bold text-[#0B1B4F] hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] transition-all uppercase tracking-wider"
             >
               <Home className="w-4 h-4 text-slate-500" />
-              <span>Home</span>
+              <span>HOME</span>
             </Link>
 
             {/* ABOUT US */}
             <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === "about" ? null : "about")}
-                className={`flex items-center justify-between w-full px-4 py-3 text-sm font-bold transition-all rounded-xl ${
+                className={`flex items-center justify-between w-full px-4 py-3 text-sm font-bold transition-all rounded-xl uppercase tracking-wider ${
                   mobileExpanded === "about"
                     ? "bg-[#0B1B4F]/5 text-[#00C2FF]"
                     : "text-[#0B1B4F] hover:bg-slate-100"
                 }`}
               >
-                <span>About Us</span>
+                <span>ABOUT US</span>
                 {mobileExpanded === "about" ? (
                   <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
                 ) : (
@@ -303,13 +303,13 @@ export default function Navbar() {
             <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === "mechanical" ? null : "mechanical")}
-                className={`flex items-center justify-between w-full px-4 py-3 text-sm font-bold transition-all rounded-xl ${
+                className={`flex items-center justify-between w-full px-4 py-3 text-sm font-bold transition-all rounded-xl uppercase tracking-wider ${
                   mobileExpanded === "mechanical"
                     ? "bg-[#0B1B4F]/5 text-[#00C2FF]"
                     : "text-[#0B1B4F] hover:bg-slate-100"
                 }`}
               >
-                <span>Mechanical Sector</span>
+                <span>MECHANICAL SECTOR</span>
                 {mobileExpanded === "mechanical" ? (
                   <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
                 ) : (
@@ -337,13 +337,13 @@ export default function Navbar() {
             <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === "civil" ? null : "civil")}
-                className={`flex items-center justify-between w-full px-4 py-3 text-sm font-bold transition-all rounded-xl ${
+                className={`flex items-center justify-between w-full px-4 py-3 text-sm font-bold transition-all rounded-xl uppercase tracking-wider ${
                   mobileExpanded === "civil"
                     ? "bg-[#0B1B4F]/5 text-[#00C2FF]"
                     : "text-[#0B1B4F] hover:bg-slate-100"
                 }`}
               >
-                <span>Civil Sector</span>
+                <span>CIVIL SECTOR</span>
                 {mobileExpanded === "civil" ? (
                   <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
                 ) : (
@@ -371,13 +371,13 @@ export default function Navbar() {
             <div className="rounded-xl overflow-hidden">
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === "tourism" ? null : "tourism")}
-                className={`flex items-center justify-between w-full px-4 py-3 text-sm font-bold transition-all rounded-xl ${
+                className={`flex items-center justify-between w-full px-4 py-3 text-sm font-bold transition-all rounded-xl uppercase tracking-wider ${
                   mobileExpanded === "tourism"
                     ? "bg-[#0B1B4F]/5 text-[#00C2FF]"
                     : "text-[#0B1B4F] hover:bg-slate-100"
                 }`}
               >
-                <span>Tourism &amp; Marine Sector</span>
+                <span>TOURISM &amp; MARINE SECTOR</span>
                 {mobileExpanded === "tourism" ? (
                   <ChevronDown className="w-4 h-4 text-[#00C2FF]" />
                 ) : (
@@ -405,18 +405,18 @@ export default function Navbar() {
             <Link
               href="/gallery"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-bold text-[#0B1B4F] hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] transition-all"
+              className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-bold text-[#0B1B4F] hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] transition-all uppercase tracking-wider"
             >
-              <span>Project Gallery</span>
+              <span>PROJECT GALLERY</span>
             </Link>
 
             {/* CAREERS */}
             <Link
               href="/career"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-bold text-[#0B1B4F] hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] transition-all"
+              className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-bold text-[#0B1B4F] hover:bg-[#00C2FF]/10 hover:text-[#00C2FF] transition-all uppercase tracking-wider"
             >
-              <span>Careers</span>
+              <span>CAREERS</span>
             </Link>
 
             {/* CTA BUTTON */}
@@ -426,7 +426,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 w-full bg-[#00C2FF] text-[#0B1B4F] text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md hover:bg-[#0B1B4F] hover:text-white transition-all duration-300"
               >
-                <span>Contact Us</span>
+                <span>CONTACT US</span>
               </Link>
             </div>
 
