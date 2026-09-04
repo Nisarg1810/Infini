@@ -80,21 +80,21 @@ export default function Navbar() {
           ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200" 
           : "bg-white shadow-md border-b border-slate-100"
       }`}>
-        <div className={`max-w-6xl mx-auto relative flex items-center justify-between gap-3 transition-all duration-300 ${
-          scrolled ? "h-[60px] sm:h-[68px] lg:h-[68px]" : "h-[76px] sm:h-[88px] lg:h-[88px]"
+        <div className={`max-w-6xl mx-auto relative flex items-center justify-between gap-4 px-1 sm:px-0 transition-all duration-300 ${
+          scrolled ? "h-[58px] sm:h-[64px] lg:h-[64px]" : "h-[88px] sm:h-[96px] lg:h-[84px]"
         }`}>
 
           {/* Mobile Menu Toggle — Left Corner */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-[#0B1B4F] hover:text-[#00C2FF] p-2 transition-colors z-20 shrink-0"
+            className="lg:hidden text-[#0B1B4F] hover:text-[#00C2FF] p-2 transition-colors z-20"
             aria-label="Toggle Navigation"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
-          {/* Logo — Prominently Centered on Mobile, Static Left on Desktop */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center justify-center shrink-0 group z-10 py-1">
+          {/* Logo — Big and Centered on Mobile, Static Left on Desktop */}
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center shrink-0 group z-10">
             <Image
               src="/images/logo.jpg"
               alt="INFINI Infrastructure & Engineering Pvt. Ltd."
@@ -102,8 +102,8 @@ export default function Navbar() {
               height={80}
               className={`w-auto object-contain transition-all duration-300 group-hover:scale-[1.02] ${
                 scrolled
-                  ? "h-10 xs:h-11 sm:h-13 lg:h-14 max-w-[170px] xs:max-w-[200px] sm:max-w-[280px] lg:max-w-[320px]"
-                  : "h-12 xs:h-14 sm:h-16 lg:h-18 max-w-[200px] xs:max-w-[250px] sm:max-w-[340px] lg:max-w-[380px]"
+                  ? "h-11 xs:h-12 sm:h-14 lg:h-14 max-w-[180px] xs:max-w-[220px] sm:max-w-[300px] lg:max-w-[320px]"
+                  : "h-16 xs:h-20 sm:h-24 lg:h-20 max-w-[240px] xs:max-w-[300px] sm:max-w-[400px] lg:max-w-[400px]"
               }`}
               priority
             />
