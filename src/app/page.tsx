@@ -95,13 +95,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
             <Link
               href={heroSlides[activeSlide].ctaLink}
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#00C2FF] text-[#0B1B4F] font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:shadow-xl transition-all duration-300 gap-2 shadow-lg"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#00C2FF]/20 backdrop-blur-md border-2 border-[#00C2FF]/70 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base transition-all duration-300 gap-2 shadow-lg hover:bg-[#00C2FF] hover:text-[#0B1B4F] hover:border-[#00C2FF] hover:shadow-[0_0_30px_rgba(0,194,255,0.6)] hover:scale-105"
             >
               {heroSlides[activeSlide].ctaText} <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center border-2 border-white/80 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:text-[#0B1B4F] transition-all duration-300 text-center shadow-lg"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-white/10 backdrop-blur-md border-2 border-white/40 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base transition-all duration-300 text-center shadow-lg hover:bg-white hover:text-[#0B1B4F] hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-105"
             >
               Contact Us
             </Link>
