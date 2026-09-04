@@ -2,26 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { 
-  Wrench, 
-  HardHat, 
-  Ship, 
-  ShieldCheck, 
-  Award, 
-  ArrowRight, 
-  CheckCircle2, 
-  Sparkles,
-  Users,
-  Anchor,
+import {
+  Wrench,
+  HardHat,
+  Ship,
+  Award,
+  ArrowRight,
   ChevronLeft,
   ChevronRight,
-  PhoneCall,
-  Activity,
-  Building2,
-  Compass,
-  Layers,
-  MapPin,
-  Clock
 } from "lucide-react";
 
 export default function HomePage() {
@@ -34,7 +22,7 @@ export default function HomePage() {
       subtitle: "Designing, supplying, and installing modular floating pontoon jetties, seaplane platforms, and naval berthing systems across coastal India & the Middle East.",
       badge: "TOURISM & MARINE SECTOR",
       badgeColor: "bg-infini-amber/20 border-infini-amber/40 text-infini-amber",
-      bgImage: "/images/marine_jetty.png",
+      bgImage: "/images/hero_bg.png",
       ctaText: "Explore Floating Docks",
       ctaLink: "/sectors/tourism/floating-docks-jetties"
     },
@@ -81,156 +69,97 @@ export default function HomePage() {
   const currentSlide = heroSlides[activeSlide];
 
   return (
-    <div className="space-y-20 pb-16 bg-slate-50">
+    <div className="space-y-0 pb-16 bg-slate-50">
       
-      {/* HIGH-IMPACT HERO CAROUSEL BANNER */}
-      <section className="relative text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[85vh] flex items-center">
-        
-        {/* Background Image Carousel with Smooth Transition */}
+      {/* ── HERO SECTION ── */}
+      <section className="relative w-full overflow-hidden" style={{ height: "92vh", minHeight: "560px" }}>
+
+        {/* Background Images */}
         {heroSlides.map((slide, index) => (
-          <div 
-            key={slide.id} 
-            className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out ${
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
               index === activeSlide ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            <img 
-              src={slide.bgImage} 
-              alt={slide.title} 
-              className="w-full h-full object-cover object-center filter brightness-70 scale-105"
+            <img
+              src={slide.bgImage}
+              alt={slide.title}
+              className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-infini-navy-dark/95 via-infini-navy/85 to-infini-navy-dark/70 backdrop-blur-[2px]"></div>
+            {/* Dark overlay: stronger at bottom for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/75" />
           </div>
         ))}
 
-        {/* Ambient Glow Effects */}
-        <div className="absolute top-1/4 left-10 w-96 h-96 bg-infini-cyan/20 rounded-full blur-3xl pointer-events-none animate-pulse z-0"></div>
-
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+        {/* Centered Content */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 sm:px-8 z-10">
           
-          {/* Left Text Column */}
-          <div className="lg:col-span-7 space-y-6">
-            
-            {/* Animated Sector Tag */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-xs font-bold uppercase tracking-widest backdrop-blur-md transition-all">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>{currentSlide.badge}</span>
-            </div>
-
-            {/* Dynamic Slide Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight min-h-[140px] sm:min-h-[160px] flex items-center">
-              {currentSlide.title}
-            </h1>
-
-            {/* Slide Description */}
-            <p className="text-base sm:text-lg text-slate-200 max-w-2xl leading-relaxed">
-              {currentSlide.subtitle}
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
-              <Link 
-                href={currentSlide.ctaLink} 
-                className="bg-infini-cyan text-infini-navy font-extrabold hover:bg-white px-8 py-4 rounded-full text-sm shadow-xl shadow-infini-cyan/25 hover:shadow-infini-cyan/50 transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-0.5"
-              >
-                <span>{currentSlide.ctaText}</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link 
-                href="/contact" 
-                className="border border-white/30 hover:border-infini-cyan text-slate-100 hover:text-white px-7 py-4 rounded-full text-sm font-bold transition-all backdrop-blur-md bg-white/10"
-              >
-                Request Consultation
-              </Link>
-            </div>
-
-            {/* Slide Navigation Dots & Controls */}
-            <div className="flex items-center gap-6 pt-8 border-t border-slate-700/80">
-              <div className="flex items-center gap-2">
-                {heroSlides.map((slide, idx) => (
-                  <button
-                    key={slide.id}
-                    onClick={() => setActiveSlide(idx)}
-                    className={`h-2.5 rounded-full transition-all duration-300 ${
-                      idx === activeSlide ? "w-10 bg-infini-cyan" : "w-2.5 bg-white/40 hover:bg-white/70"
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
-              </div>
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-300">
-                <button 
-                  onClick={() => setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
-                  className="p-2 rounded-full bg-white/10 hover:bg-infini-cyan hover:text-infini-navy transition-all"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <span>0{activeSlide + 1} / 0{heroSlides.length}</span>
-                <button 
-                  onClick={() => setActiveSlide((prev) => (prev + 1) % heroSlides.length)}
-                  className="p-2 rounded-full bg-white/10 hover:bg-infini-cyan hover:text-infini-navy transition-all"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-
+          {/* Sector badge */}
+          <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-[11px] font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-sm transition-all duration-500 ${heroSlides[activeSlide].badgeColor}`}>
+            {heroSlides[activeSlide].badge}
           </div>
 
-          {/* Right Hero Contact & Highlights Card */}
-          <div className="lg:col-span-5 relative">
-            <div className="glass-card-dark p-8 rounded-3xl space-y-6 shadow-2xl border border-infini-cyan/30 relative overflow-hidden group">
-              
-              <div className="flex items-center gap-3 border-b border-slate-700/80 pb-4">
-                <div className="w-12 h-12 rounded-2xl bg-infini-cyan/20 border border-infini-cyan/40 flex items-center justify-center text-infini-cyan shrink-0">
-                  <Anchor className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-extrabold text-white text-base">INFINI Infrastructure</h3>
-                  <p className="text-xs text-slate-300">Mumbai Headquarters • NESCO IT Park</p>
-                </div>
-              </div>
+          {/* Main Headline */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight tracking-tight max-w-5xl drop-shadow-2xl mb-6">
+            {heroSlides[activeSlide].title}
+          </h1>
 
-              <div className="space-y-3.5 text-xs text-slate-200">
-                <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
-                  <CheckCircle2 className="w-4 h-4 text-infini-cyan shrink-0" />
-                  <span>Floating Docks & Seaplane Landing Platforms</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
-                  <CheckCircle2 className="w-4 h-4 text-infini-emerald shrink-0" />
-                  <span>Crane Rail Fixtures for Ports & Shipyards</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
-                  <CheckCircle2 className="w-4 h-4 text-infini-amber shrink-0" />
-                  <span>RDSO Approved Alumina Thermit Rail Welding</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
-                  <CheckCircle2 className="w-4 h-4 text-infini-cyan shrink-0" />
-                  <span>Visioncraft Metguard Anti-Corrosion Coating</span>
-                </div>
-              </div>
+          {/* Subtitle */}
+          <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed mb-10 drop-shadow">
+            {heroSlides[activeSlide].subtitle}
+          </p>
 
-              {/* Direct Call / Inquiry Buttons */}
-              <div className="pt-2 space-y-2">
-                <a 
-                  href="tel:+919920350663" 
-                  className="w-full bg-infini-cyan text-infini-navy font-extrabold hover:bg-white text-center py-3.5 rounded-xl text-xs flex items-center justify-center gap-2 transition-all shadow-lg"
-                >
-                  <PhoneCall className="w-4 h-4" />
-                  <span>Call Engineers: +91 9920350663</span>
-                </a>
-                <Link 
-                  href="/about/why-infini" 
-                  className="w-full bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-center py-3 rounded-xl text-xs font-semibold block transition-colors border border-slate-700"
-                >
-                  Learn About Our Engineering Promoters →
-                </Link>
-              </div>
-
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href={heroSlides[activeSlide].ctaLink}
+              className="bg-[#00C2FF] text-[#0B1B4F] font-bold px-8 py-3.5 rounded-full text-sm shadow-xl hover:bg-white transition-all duration-300 flex items-center gap-2"
+            >
+              {heroSlides[activeSlide].ctaText}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/contact"
+              className="border border-white/50 text-white font-bold px-8 py-3.5 rounded-full text-sm hover:bg-white hover:text-[#0B1B4F] transition-all duration-300 backdrop-blur-sm"
+            >
+              Request Consultation
+            </Link>
           </div>
-
         </div>
+
+        {/* Slide Dots — bottom center */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-10">
+          {heroSlides.map((slide, idx) => (
+            <button
+              key={slide.id}
+              onClick={() => setActiveSlide(idx)}
+              aria-label={`Go to slide ${idx + 1}`}
+              className={`rounded-full transition-all duration-300 ${
+                idx === activeSlide
+                  ? "w-8 h-2.5 bg-[#00C2FF]"
+                  : "w-2.5 h-2.5 bg-white/40 hover:bg-white/70"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Prev / Next Arrows — sides */}
+        <button
+          onClick={() => setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
+          className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-black/30 hover:bg-[#00C2FF] text-white hover:text-[#0B1B4F] flex items-center justify-center transition-all duration-300 backdrop-blur-sm"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() => setActiveSlide((prev) => (prev + 1) % heroSlides.length)}
+          className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-black/30 hover:bg-[#00C2FF] text-white hover:text-[#0B1B4F] flex items-center justify-center transition-all duration-300 backdrop-blur-sm"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+
       </section>
 
       {/* STAT COUNTER BANNER (INSPIRED BY WEST COAST MARINE) */}
