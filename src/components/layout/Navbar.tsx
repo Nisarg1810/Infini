@@ -109,7 +109,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto relative flex items-center h-[88px] lg:h-[84px] lg:justify-between gap-4">
 
           {/* Logo — absolutely centered on mobile, static left on desktop */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center group">
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:pl-6 flex items-center group">
             <img
               src="/images/logo.jpg"
               alt="INFINI Infrastructure & Engineering Pvt. Ltd."
