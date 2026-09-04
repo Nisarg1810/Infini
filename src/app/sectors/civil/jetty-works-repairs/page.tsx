@@ -4,19 +4,34 @@ import { HardHat, CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function JettyWorksRepairsPage() {
   return (
-    <div className="py-12 space-y-16">
+    <div className="pb-12 space-y-16">
       
       {/* ─── HEADER BANNER ─── */}
-      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#00C2FF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
-        <div className="max-w-7xl mx-auto space-y-4 relative z-10">
+      <section className="relative bg-[#0B1B4F] text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20 overflow-hidden">
+        {/* Glow & Grid Overlays */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,194,255,0.18),transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(11,27,79,0.95),transparent_70%)]" />
+          <div
+            className="absolute inset-0 opacity-[0.06]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+              backgroundSize: "36px 36px",
+            }}
+          />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto space-y-4">
           <Breadcrumb />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C2FF]/15 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
             <HardHat className="w-3.5 h-3.5" />
             CIVIL SECTOR
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight">Jetty Construction &amp; Repairs</h1>
-          <p className="text-slate-300 text-sm max-w-2xl leading-relaxed">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight max-w-3xl">
+            Jetty Construction &amp; <span className="text-[#00C2FF]">Repairs</span>
+          </h1>
+          <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed font-light">
             Civil construction including supply and installation of jetty fixtures: buffer stops, bollards, cleats, fenders, handrails, ladders, mast &amp; deck light assemblies.
           </p>
         </div>
