@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, CheckCircle2, Globe, Clock, ExternalLink, ShieldCheck, Building2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, Globe, Clock, ExternalLink, ShieldCheck, Building2, AlertCircle } from "lucide-react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -14,8 +14,58 @@ export default function ContactPage() {
     message: "",
   });
 
+  const [errors, setErrors] = useState<{ email?: string; phone?: string }>({});
+  const [touched, setTouched] = useState<{ email?: boolean; phone?: boolean }>({});
+
+  const validateEmail = (email: string) => {
+    const trimmed = email.trim();
+    if (!trimmed) return "Email address is required";
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(trimmed)) {
+      return "Please enter a valid email address (e.g. name@company.com)";
+    }
+    return "";
+  };
+
+  const validatePhone = (phone: string) => {
+    const trimmed = phone.trim();
+    if (!trimmed) return "Mobile number is required";
+    const cleaned = trimmed.replace(/[\s\-\(\)\+]/g, "");
+    if (!/^\d+$/.test(cleaned)) {
+      return "Mobile number must contain digits only";
+    }
+    if (cleaned.length < 10 || cleaned.length > 15) {
+      return "Please enter a valid 10-digit mobile number (e.g. +91 9920350663)";
+    }
+    return "";
+  };
+
+  const handleInputChange = (field: "email" | "phone", value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+    if (touched[field]) {
+      const err = field === "email" ? validateEmail(value) : validatePhone(value);
+      setErrors((prev) => ({ ...prev, [field]: err }));
+    }
+  };
+
+  const handleBlur = (field: "email" | "phone") => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+    const err = field === "email" ? validateEmail(formData.email) : validatePhone(formData.phone);
+    setErrors((prev) => ({ ...prev, [field]: err }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const emailErr = validateEmail(formData.email);
+    const phoneErr = validatePhone(formData.phone);
+
+    setTouched({ email: true, phone: true });
+    setErrors({ email: emailErr, phone: phoneErr });
+
+    if (emailErr || phoneErr) {
+      return;
+    }
+
     setSubmitted(true);
   };
 
@@ -176,14 +226,19 @@ export default function ContactPage() {
                     Thank you for reaching out to INFINI Infrastructure &amp; Engineering Pvt. Ltd. Our technical estimation team has received your message and will respond within 24 business hours.
                   </p>
                   <button
-                    onClick={() => setSubmitted(false)}
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({ fullName: "", email: "", phone: "", organization: "", sector: "Mechanical Sector", message: "" });
+                      setErrors({});
+                      setTouched({});
+                    }}
                     className="mt-4 text-xs font-bold text-[#0B1B4F] border-b-2 border-[#00C2FF] hover:text-[#00C2FF] transition-colors"
                   >
                     Submit Another Inquiry
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+                <form onSubmit={handleSubmit} noValidate className="space-y-4 text-xs">
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -199,29 +254,55 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-slate-700 font-bold mb-1.5">Email Address *</label>
+                      <label className="block text-slate-700 font-bold mb-1.5 flex items-center justify-between">
+                        <span>Email Address *</span>
+                      </label>
                       <input 
                         type="email" 
                         required 
                         placeholder="vijay@example.com" 
                         value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        className="w-full bg-white/90 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#00C2FF] focus:border-transparent transition-all shadow-sm"
+                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        onBlur={() => handleBlur("email")}
+                        className={`w-full bg-white/90 border rounded-xl px-4 py-3 text-slate-800 focus:outline-none transition-all shadow-sm ${
+                          errors.email 
+                            ? "border-red-500 focus:ring-2 focus:ring-red-400" 
+                            : "border-slate-300 focus:ring-2 focus:ring-[#00C2FF] focus:border-transparent"
+                        }`}
                       />
+                      {errors.email && (
+                        <p className="text-red-500 text-[11px] font-semibold mt-1 flex items-center gap-1">
+                          <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-slate-700 font-bold mb-1.5">Phone / Mobile *</label>
+                      <label className="block text-slate-700 font-bold mb-1.5 flex items-center justify-between">
+                        <span>Phone / Mobile *</span>
+                      </label>
                       <input 
                         type="tel" 
                         required 
                         placeholder="+91 9920350663" 
                         value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        className="w-full bg-white/90 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#00C2FF] focus:border-transparent transition-all shadow-sm"
+                        onChange={(e) => handleInputChange("phone", e.target.value)}
+                        onBlur={() => handleBlur("phone")}
+                        className={`w-full bg-white/90 border rounded-xl px-4 py-3 text-slate-800 focus:outline-none transition-all shadow-sm ${
+                          errors.phone 
+                            ? "border-red-500 focus:ring-2 focus:ring-red-400" 
+                            : "border-slate-300 focus:ring-2 focus:ring-[#00C2FF] focus:border-transparent"
+                        }`}
                       />
+                      {errors.phone && (
+                        <p className="text-red-500 text-[11px] font-semibold mt-1 flex items-center gap-1">
+                          <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                          {errors.phone}
+                        </p>
+                      )}
                     </div>
 
                     <div>
