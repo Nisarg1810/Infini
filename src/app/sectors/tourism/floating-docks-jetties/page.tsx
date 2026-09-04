@@ -7,34 +7,24 @@ export default function FloatingDocksJettiesPage() {
   return (
     <div className="py-12 space-y-16">
       
-      {/* Hero Banner with Realistic Image Background */}
-      <section className="relative text-white py-20 px-4 sm:px-6 lg:px-8 border-b border-infini-amber/20 overflow-hidden min-h-[45vh] flex items-center">
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/floating_dock.png" 
-            alt="Floating Pontoon Docks & Jetties" 
-            fill
-            className="object-cover brightness-75"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-infini-navy-dark/95 via-infini-navy/85 to-infini-navy-dark/75"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto space-y-4 relative z-10">
+      {/* ─── HEADER BANNER ─── */}
+      <section className="bg-[#0B1B4F] text-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#00C2FF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+        <div className="max-w-6xl mx-auto space-y-4 relative z-10">
           <Breadcrumb />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-infini-amber/20 border border-infini-amber/40 text-infini-amber text-xs font-semibold backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold">
             <Ship className="w-3.5 h-3.5" />
-            TOURISM SECTOR
+            TOURISM &amp; MARINE SECTOR
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight">Floating Docks - Platforms - Jetties</h1>
-          <p className="text-slate-200 text-sm max-w-2xl leading-relaxed">
+          <h1 className="section-heading text-white text-3xl sm:text-5xl font-extrabold tracking-tight">Floating Docks – Platforms – Jetties</h1>
+          <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
             Modular floating dock systems, floating platforms, and floating jetties for tourism projects, ports, shipyards, and naval vessel docking.
           </p>
         </div>
       </section>
 
       {/* Main Content Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 space-y-8">
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-infini-navy">Floating Structure Solutions</h2>

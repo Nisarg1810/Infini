@@ -7,34 +7,24 @@ export default function RDSOThermitWeldingPage() {
   return (
     <div className="py-12 space-y-16">
       
-      {/* Hero Banner with Realistic Image Background */}
-      <section className="relative text-white py-20 px-4 sm:px-6 lg:px-8 border-b border-infini-cyan/20 overflow-hidden min-h-[45vh] flex items-center">
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/thermit_welding.png" 
-            alt="RDSO Thermit Rail Welding" 
-            fill
-            className="object-cover brightness-75"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-infini-navy-dark/95 via-infini-navy/85 to-infini-navy-dark/75"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto space-y-4 relative z-10">
+      {/* ─── HEADER BANNER ─── */}
+      <section className="bg-[#0B1B4F] text-white py-14 sm:py-18 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#00C2FF_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+        <div className="max-w-6xl mx-auto space-y-4 relative z-10">
           <Breadcrumb />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-infini-cyan/20 border border-infini-cyan/40 text-infini-cyan text-xs font-semibold backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-semibold">
             <Award className="w-3.5 h-3.5" />
             MECHANICAL SECTOR
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight">RDSO Approved Alumina Thermit Welding Kits</h1>
-          <p className="text-slate-200 text-sm max-w-2xl leading-relaxed">
+          <h1 className="section-heading text-white text-3xl sm:text-5xl font-extrabold tracking-tight">RDSO Approved Alumina Thermit Welding Kits</h1>
+          <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
             Supply and execution of RDSO-approved alumina thermit welding kits for heavy haul rail tracks, crane rails, and port siding networks.
           </p>
         </div>
       </section>
 
       {/* Main Content Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 space-y-8">
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-infini-navy">RDSO Certified Welding Execution</h2>
