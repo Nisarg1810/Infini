@@ -147,12 +147,12 @@ export default function HomePage() {
               key={slide.id}
               onClick={() => setActiveSlide(idx)}
               aria-label={`Go to slide ${idx + 1}`}
-              className={`rounded-full transition-all duration-300 ${
-                idx === activeSlide
-                  ? "w-8 h-2.5 bg-[#00C2FF]"
-                  : "w-2.5 h-2.5 bg-white/40 hover:bg-white/70"
-              }`}
-            />
+            >
+              {idx === activeSlide
+                ? <span key={`active-${activeSlide}`} className="hero-dot-active block" />
+                : <span className="hero-dot-inactive block" />
+              }
+            </button>
           ))}
         </div>
 

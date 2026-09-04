@@ -61,3 +61,50 @@
   @apply bg-infini-navy text-white font-bold rounded-full px-6 py-3 border border-infini-cyan/30 transition-all duration-300 
          hover:bg-infini-cyan hover:text-infini-navy active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
 }
+
+/* ── HERO SLIDE DOT PROGRESS ANIMATION ── */
+@keyframes dotProgress {
+  from { width: 12px; }
+  to   { width: 40px; }
+}
+
+@keyframes dotFill {
+  from { background-position: -100% 0; }
+  to   { background-position: 0% 0; }
+}
+
+.hero-dot-active {
+  position: relative;
+  width: 40px;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.25);
+}
+
+.hero-dot-active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #00C2FF;
+  transform-origin: left center;
+  animation: slideProgress 6s linear forwards;
+}
+
+@keyframes slideProgress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.hero-dot-inactive {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.35);
+  transition: background 0.3s;
+}
+
+.hero-dot-inactive:hover {
+  background: rgba(255,255,255,0.65);
+}
