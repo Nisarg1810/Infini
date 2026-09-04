@@ -32,6 +32,9 @@ const segmentLabels: Record<string, string> = {
   "media-news": "Media & News",
 };
 
+// Segments that have no real page — skip them from the breadcrumb trail
+const skipSegments = new Set(["sectors"]);
+
 export default function Breadcrumb() {
   const pathname = usePathname();
 
@@ -40,12 +43,19 @@ export default function Breadcrumb() {
 
   const segments = pathname.split("/").filter(Boolean);
 
-  // Build cumulative hrefs
-  const crumbs = segments.map((seg, i) => ({
-    label: segmentLabels[seg] ?? seg.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
-    href: "/" + segments.slice(0, i + 1).join("/"),
-    isLast: i === segments.length - 1,
-  }));
+  // Build cumulative hrefs — skip any segment in skipSegments
+  const crumbs: { label: string; href: string; isLast: boolean }[] = [];
+  segments.forEach((seg, i) => {
+    if (skipSegments.has(seg)) return; // skip this segment entirely
+    crumbs.push({
+      label: segmentLabels[seg] ?? seg.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+      href: "/" + segments.slice(0, i + 1).join("/"),
+      isLast: false,
+    });
+  });
+
+  // Mark last item
+  if (crumbs.length > 0) crumbs[crumbs.length - 1].isLast = true;
 
   return (
     <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-1">
