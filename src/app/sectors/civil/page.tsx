@@ -32,30 +32,30 @@ export default function CivilSectorPage() {
 
   return (
     <div className="py-12 space-y-16">
-      <section className="bg-infini-navy text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-infini-cyan/20">
-        <div className="max-w-7xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-infini-emerald/10 border border-infini-emerald/30 text-infini-emerald text-xs font-semibold">
+      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20">
+        <div className="max-w-6xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <HardHat className="w-3.5 h-3.5" />
-            SECTORS
+            CIVIL SECTOR
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight">Civil Engineering Sector</h1>
-          <p className="text-slate-300 text-sm max-w-2xl">
+          <h1 className="section-heading text-white text-4xl sm:text-5xl">Civil Engineering Sector</h1>
+          <p className="text-slate-300 text-sm max-w-2xl leading-relaxed">
             Jetty construction, RCC/PCC girders, breakwater concrete positioning, paver blocks, and heavy civil works.
           </p>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((item) => (
-            <div key={item.id} id={item.id} className="glass-card p-8 rounded-3xl space-y-4 border-l-4 border-l-infini-emerald">
-              <div className="w-12 h-12 rounded-2xl bg-infini-emerald text-white flex items-center justify-center">
-                <HardHat className="w-6 h-6 text-white" />
+            <div key={item.id} id={item.id} className="glass-card-interactive p-8 rounded-3xl space-y-4 border-l-4 border-l-emerald-500 group hover:border-emerald-500">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                <HardHat className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-infini-navy">{item.title}</h3>
+              <h3 className="text-xl font-bold text-[#0B1B4F] group-hover:text-emerald-600 transition-colors">{item.title}</h3>
               <p className="text-xs text-slate-600 leading-relaxed">{item.description}</p>
               <div className="pt-2">
-                <Link href="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold text-infini-navy hover:text-infini-emerald">
+                <Link href="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B1B4F] hover:text-emerald-600 transition-colors">
                   Inquire for {item.title.split("&")[0]} <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

@@ -64,20 +64,20 @@ export default function GalleryPage() {
 
   return (
     <div className="py-12 space-y-16">
-      <section className="bg-infini-navy text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-infini-cyan/20">
-        <div className="max-w-7xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-infini-cyan/10 border border-infini-cyan/30 text-infini-cyan text-xs font-semibold">
+      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20">
+        <div className="max-w-6xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-semibold">
             <Camera className="w-3.5 h-3.5" />
             PROJECT PORTFOLIO
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight">Project Gallery</h1>
-          <p className="text-slate-300 text-sm max-w-2xl">
-            Showcase of mechanical, civil, and floating marine engineering projects executed by INFINI Infrastructure & Engineering Pvt. Ltd.
+          <h1 className="section-heading text-white text-4xl sm:text-5xl">Project Gallery</h1>
+          <p className="text-slate-300 text-sm max-w-2xl leading-relaxed">
+            Showcase of mechanical, civil, and floating marine engineering projects executed by INFINI Infrastructure &amp; Engineering Pvt. Ltd.
           </p>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Category Filters */}
         <div className="flex flex-wrap items-center justify-center gap-3">
@@ -87,8 +87,8 @@ export default function GalleryPage() {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${
                 activeCategory === cat 
-                  ? "bg-infini-navy text-white shadow-lg ring-2 ring-infini-cyan/40" 
-                  : "bg-slate-200 text-slate-700 hover:bg-slate-300"
+                  ? "bg-[#0B1B4F] text-white shadow-lg ring-2 ring-[#00C2FF]/50" 
+                  : "bg-slate-200/80 text-slate-700 hover:bg-slate-300 hover:text-[#0B1B4F]"
               }`}
             >
               {cat === "ALL" ? "All Projects" : `${cat} Sector`}
@@ -99,14 +99,14 @@ export default function GalleryPage() {
         {/* Gallery Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {filteredItems.map((item) => (
-            <div key={item.id} className="group rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col justify-between">
+            <div key={item.id} className="glass-card group rounded-3xl overflow-hidden hover:border-[#00C2FF] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
               <div className="relative h-56 overflow-hidden">
                 <img 
                   src={item.image} 
                   alt={item.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-95"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-infini-navy-dark/90 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/90 via-transparent to-transparent"></div>
                 <div className="absolute top-4 left-4">
                   <span className={`px-3 py-1 rounded-full text-[10px] font-extrabold uppercase backdrop-blur-md ${item.tagColor}`}>
                     {item.category}
@@ -114,7 +114,7 @@ export default function GalleryPage() {
                 </div>
               </div>
               <div className="p-6 space-y-2">
-                <h3 className="font-extrabold text-infini-navy text-base group-hover:text-infini-cyan transition-colors">{item.title}</h3>
+                <h3 className="font-extrabold text-[#0B1B4F] text-base group-hover:text-[#00C2FF] transition-colors">{item.title}</h3>
                 <p className="text-xs text-slate-500 leading-relaxed">{item.description}</p>
               </div>
             </div>
@@ -123,15 +123,15 @@ export default function GalleryPage() {
 
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-100 p-8 rounded-3xl border border-slate-200 text-center space-y-4">
-          <h3 className="text-xl font-bold text-infini-navy">Have Project Specific Photo Requirements?</h3>
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="glass-card p-8 rounded-3xl text-center space-y-4 border border-slate-200 hover:border-[#00C2FF]/40 transition-all duration-300">
+          <h3 className="text-xl font-bold text-[#0B1B4F]">Have Project Specific Photo Requirements?</h3>
           <p className="text-xs text-slate-500 max-w-md mx-auto">
             Contact our project management team to request technical case studies, site photographs, or equipment datasheets.
           </p>
           <Link 
             href="/contact" 
-            className="inline-block bg-infini-navy hover:bg-infini-cyan text-white hover:text-infini-navy px-6 py-2.5 rounded-full text-xs font-bold transition-colors shadow-md"
+            className="inline-block bg-[#0B1B4F] text-white hover:bg-[#00C2FF] hover:text-[#0B1B4F] px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 shadow-md"
           >
             Inquire For Technical Specs
           </Link>

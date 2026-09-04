@@ -37,30 +37,30 @@ export default function MechanicalSectorPage() {
 
   return (
     <div className="py-12 space-y-16">
-      <section className="bg-infini-navy text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-infini-cyan/20">
-        <div className="max-w-7xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-infini-cyan/10 border border-infini-cyan/30 text-infini-cyan text-xs font-semibold">
+      <section className="bg-[#0B1B4F] text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-[#00C2FF]/20">
+        <div className="max-w-6xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00C2FF]/10 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-semibold">
             <Wrench className="w-3.5 h-3.5" />
-            SECTORS
+            MECHANICAL SECTOR
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight">Mechanical Engineering Sector</h1>
-          <p className="text-slate-300 text-sm max-w-2xl">
+          <h1 className="section-heading text-white text-4xl sm:text-5xl">Mechanical Engineering Sector</h1>
+          <p className="text-slate-300 text-sm max-w-2xl leading-relaxed">
             Crane rail installations, RDSO thermit welding, Metguard protective coatings, and heavy structural fabrication.
           </p>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((item) => (
-            <div key={item.id} id={item.id} className="glass-card p-8 rounded-3xl space-y-4 border-l-4 border-l-infini-cyan">
-              <div className="w-12 h-12 rounded-2xl bg-infini-navy text-white flex items-center justify-center">
-                <Wrench className="w-6 h-6 text-infini-cyan" />
+            <div key={item.id} id={item.id} className="glass-card-interactive p-8 rounded-3xl space-y-4 border-l-4 border-l-[#00C2FF] group">
+              <div className="w-12 h-12 rounded-2xl bg-[#0B1B4F]/5 border border-[#0B1B4F]/15 text-[#0B1B4F] flex items-center justify-center group-hover:bg-[#0B1B4F] group-hover:text-[#00C2FF] transition-all duration-300 shadow-sm">
+                <Wrench className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-infini-navy">{item.title}</h3>
+              <h3 className="text-xl font-bold text-[#0B1B4F] group-hover:text-[#00C2FF] transition-colors">{item.title}</h3>
               <p className="text-xs text-slate-600 leading-relaxed">{item.description}</p>
               <div className="pt-2">
-                <Link href="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold text-infini-navy hover:text-infini-cyan">
+                <Link href="/contact" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B1B4F] hover:text-[#00C2FF] transition-colors">
                   Inquire for {item.title.split("–")[0]} <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

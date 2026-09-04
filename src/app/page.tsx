@@ -206,16 +206,18 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
             <span className="section-badge mb-3">What We Do</span>
-            <h2 className="section-heading">Our Core Sectors</h2>
+            <h2 className="section-heading mb-3">Core Engineering Sectors</h2>
+            <p className="section-body max-w-2xl">
+              Turnkey services tailored for industrial infrastructure, coastal tourism, and marine defense.
+            </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Mechanical */}
-            <div className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between">
+            <div className="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between hover:border-[#00C2FF] hover:-translate-y-1.5 transition-all duration-300">
               <div>
                 <div className="relative h-48 overflow-hidden">
                   <img src="/images/crane_rail.png" alt="Mechanical Sector" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/85 to-transparent" />
                   <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Mechanical</span>
                 </div>
                 <div className="p-5">
@@ -246,11 +248,11 @@ export default function HomePage() {
             </div>
 
             {/* Civil */}
-            <div className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between">
+            <div className="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between hover:border-emerald-500 hover:-translate-y-1.5 transition-all duration-300">
               <div>
                 <div className="relative h-48 overflow-hidden">
                   <img src="/images/civil_bridge.png" alt="Civil Sector" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/85 to-transparent" />
                   <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Civil</span>
                 </div>
                 <div className="p-5">
@@ -263,8 +265,8 @@ export default function HomePage() {
                       { label: "RCC & PCC Girders", href: "/sectors/civil/rcc-pcc-girders" },
                     ].map((s) => (
                       <li key={s.href}>
-                        <Link href={s.href} className="flex items-center gap-2 hover:text-[#22C55E] transition-colors group/item">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] shrink-0 group-hover/item:scale-125 transition-transform" />
+                        <Link href={s.href} className="flex items-center gap-2 hover:text-emerald-500 transition-colors group/item">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 group-hover/item:scale-125 transition-transform" />
                           <span>{s.label}</span>
                         </Link>
                       </li>
@@ -273,19 +275,19 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="p-5 pt-0">
-                <Link href="/sectors/civil" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B1B4F] hover:text-[#22C55E] transition-colors">
+                <Link href="/sectors/civil" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B1B4F] hover:text-emerald-500 transition-colors">
                   View Sector <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
 
             {/* Tourism */}
-            <div className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between">
+            <div className="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between hover:border-amber-500 hover:-translate-y-1.5 transition-all duration-300">
               <div>
                 <div className="relative h-48 overflow-hidden">
                   <img src="/images/marine_jetty.png" alt="Tourism Sector" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/80 to-transparent" />
-                  <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Tourism & Marine</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/85 to-transparent" />
+                  <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Tourism &amp; Marine</span>
                 </div>
                 <div className="p-5">
                   <ul className="space-y-2 text-sm text-slate-600">
@@ -294,8 +296,8 @@ export default function HomePage() {
                       { label: "Seaplane Platforms", href: "/sectors/tourism/seaplane-platforms" },
                     ].map((s) => (
                       <li key={s.href}>
-                        <Link href={s.href} className="flex items-center gap-2 hover:text-[#F97316] transition-colors group/item">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0 group-hover/item:scale-125 transition-transform" />
+                        <Link href={s.href} className="flex items-center gap-2 hover:text-amber-500 transition-colors group/item">
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 group-hover/item:scale-125 transition-transform" />
                           <span>{s.label}</span>
                         </Link>
                       </li>
@@ -304,7 +306,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="p-5 pt-0">
-                <Link href="/sectors/tourism" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B1B4F] hover:text-[#F97316] transition-colors">
+                <Link href="/sectors/tourism" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B1B4F] hover:text-amber-500 transition-colors">
                   View Sector <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -316,7 +318,7 @@ export default function HomePage() {
       {/* ─── FLOATING DOCKS SPOTLIGHT ─── */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="rounded-xl overflow-hidden shadow-md order-2 lg:order-1">
+          <div className="rounded-2xl overflow-hidden shadow-md order-2 lg:order-1 border border-slate-200 hover:border-[#00C2FF]/40 transition-all duration-300">
             <img src="/images/floating_dock.png" alt="Floating Dock Systems" className="w-full h-60 sm:h-80 object-cover" />
           </div>
           <div className="order-1 lg:order-2">
@@ -332,7 +334,7 @@ export default function HomePage() {
                 { title: "HDPE & Aluminum", desc: "Lightweight floating berths for fast deployment." },
                 { title: "Concrete Pontoons", desc: "High-stability floating jetties for heavy vessels." },
               ].map((item) => (
-                <div key={item.title} className="border border-slate-200 rounded-lg p-3.5 sm:p-4">
+                <div key={item.title} className="glass-card rounded-xl p-3.5 sm:p-4 hover:border-[#00C2FF]/60 transition-all duration-300">
                   <h4 className="font-bold text-[#0B1B4F] text-xs sm:text-sm mb-1">{item.title}</h4>
                   <p className="text-[11px] sm:text-xs text-slate-500">{item.desc}</p>
                 </div>
@@ -340,7 +342,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/sectors/tourism/floating-docks-jetties"
-              className="inline-flex items-center gap-2 bg-[#0B1B4F] text-white font-semibold px-5 sm:px-6 py-2.5 rounded-md text-xs sm:text-sm hover:bg-[#00C2FF] hover:text-[#0B1B4F] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#0B1B4F] text-white font-semibold px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm hover:bg-[#00C2FF] hover:text-[#0B1B4F] hover:shadow-lg transition-all duration-300"
             >
               View Floating Dock Portfolio <ArrowRight className="w-4 h-4" />
             </Link>
@@ -365,7 +367,7 @@ export default function HomePage() {
               ))}
             </div>
             <div className="flex flex-col xs:flex-row items-start xs:items-center gap-3">
-              <Link href="/contact" className="w-full xs:w-auto text-center bg-[#00C2FF] text-[#0B1B4F] font-bold px-5 sm:px-6 py-2.5 rounded-md text-xs sm:text-sm hover:bg-white transition-colors">
+              <Link href="/contact" className="w-full xs:w-auto text-center bg-[#00C2FF] text-[#0B1B4F] font-bold px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm hover:bg-white hover:shadow-lg transition-all duration-300">
                 Inquire for Supply & Application
               </Link>
               <Link href="/sectors/mechanical/anti-corrosion-coating" className="text-xs sm:text-sm text-white/70 hover:text-white underline underline-offset-4 flex items-center gap-1">
@@ -373,7 +375,7 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="rounded-xl overflow-hidden shadow-lg">
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-white/10 hover:border-[#00C2FF]/40 transition-all duration-300">
             <img src="/images/metguard_coating.png" alt="Metguard Coating" className="w-full h-60 sm:h-80 object-cover" />
           </div>
         </div>
@@ -395,7 +397,7 @@ export default function HomePage() {
             ].map((item) => {
               const IconComp = item.icon;
               return (
-                <div key={item.title} className="border border-slate-200 rounded-2xl p-5 sm:p-6 hover:border-[#00C2FF]/50 transition-all duration-300 bg-white hover:shadow-lg group">
+                <div key={item.title} className="glass-card rounded-2xl p-5 sm:p-6 hover:border-[#00C2FF] transition-all duration-300 group hover:-translate-y-1.5">
                   <div className="w-11 h-11 rounded-xl bg-[#0B1B4F]/5 border border-[#0B1B4F]/10 flex items-center justify-center text-[#0B1B4F] mb-4 group-hover:bg-[#0B1B4F] group-hover:text-[#00C2FF] group-hover:border-[#0B1B4F] transition-all duration-300 shadow-sm">
                     <IconComp className="w-5.5 h-5.5" />
                   </div>
