@@ -426,7 +426,6 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 w-full bg-[#00C2FF] text-[#0B1B4F] text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md hover:bg-[#0B1B4F] hover:text-white transition-all duration-300"
               >
-                <Mail className="w-4 h-4" />
                 <span>Contact Us</span>
               </Link>
             </div>
