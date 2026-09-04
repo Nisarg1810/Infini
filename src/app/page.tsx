@@ -6,10 +6,22 @@ import {
   Wrench,
   HardHat,
   Ship,
+  ShieldCheck,
   Award,
   ArrowRight,
+  CheckCircle2,
+  Sparkles,
+  Users,
+  Anchor,
   ChevronLeft,
   ChevronRight,
+  PhoneCall,
+  Activity,
+  Building2,
+  Compass,
+  Layers,
+  MapPin,
+  Clock,
 } from "lucide-react";
 
 export default function HomePage() {
