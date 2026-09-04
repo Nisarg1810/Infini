@@ -75,13 +75,13 @@ export default function Navbar() {
 
 
       {/* ── MAIN WHITE NAVBAR ── */}
-      <nav className={`px-3 sm:px-6 lg:px-8 transition-all duration-300 ${
+      <nav className={`px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
         scrolled 
           ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200" 
           : "bg-white shadow-md border-b border-slate-100"
       }`}>
-        <div className={`max-w-6xl mx-auto relative flex items-center justify-between gap-2 sm:gap-4 transition-all duration-300 ${
-          scrolled ? "h-[56px] sm:h-[64px] lg:h-[64px]" : "h-[72px] sm:h-[84px] lg:h-[84px]"
+        <div className={`max-w-6xl mx-auto relative flex items-center justify-between gap-3 transition-all duration-300 ${
+          scrolled ? "h-[60px] sm:h-[68px] lg:h-[68px]" : "h-[76px] sm:h-[88px] lg:h-[88px]"
         }`}>
 
           {/* Mobile Menu Toggle — Left Corner */}
@@ -102,8 +102,8 @@ export default function Navbar() {
               height={80}
               className={`w-auto object-contain transition-all duration-300 group-hover:scale-[1.02] ${
                 scrolled
-                  ? "h-10 xs:h-11 sm:h-13 lg:h-14 max-w-[190px] xs:max-w-[220px] sm:max-w-[300px] lg:max-w-[320px]"
-                  : "h-13 xs:h-15 sm:h-18 lg:h-20 max-w-[210px] xs:max-w-[260px] sm:max-w-[360px] lg:max-w-[400px]"
+                  ? "h-10 xs:h-11 sm:h-13 lg:h-14 max-w-[170px] xs:max-w-[200px] sm:max-w-[280px] lg:max-w-[320px]"
+                  : "h-12 xs:h-14 sm:h-16 lg:h-18 max-w-[200px] xs:max-w-[250px] sm:max-w-[340px] lg:max-w-[380px]"
               }`}
               priority
             />
