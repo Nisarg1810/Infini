@@ -1,8 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Compass, Target, ShieldCheck, Sparkles, Award, ArrowRight } from "lucide-react";
 
+export const metadata: Metadata = {
+  title: "Vision & Mission",
+  description:
+    "Discover INFINI Infrastructure & Engineering's vision to be a premier engineering firm across India and the Middle East, and our mission of delivering superior workmanship with zero compromise on safety and timelines.",
+  openGraph: {
+    title: "Vision & Mission | INFINI Infrastructure & Engineering",
+    description:
+      "Our vision: premier marine dock engineering, rail welding, and anti-corrosion solutions. Our mission: superior technical execution backed by qualified engineers.",
+    images: [{ url: "/images/hero_bg.png", width: 1200, height: 630, alt: "INFINI Infrastructure Vision Mission" }],
+  },
+};
+
 export default function VisionMissionPage() {
   return (
+
     <div className="py-12 space-y-16">
       
       {/* Header Banner */}

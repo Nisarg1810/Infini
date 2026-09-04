@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Wrench, Shield, CheckCircle2, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Mechanical Engineering Sector",
+  description:
+    "INFINI Infrastructure's Mechanical Engineering division offers crane rail fixture installation, RDSO approved alumina thermit welding, Metguard anti-corrosion coating, steel & aluminium fabrication, and railway siding works.",
+  openGraph: {
+    title: "Mechanical Engineering Sector | INFINI Infrastructure & Engineering",
+    description:
+      "Expert crane rail supply & alignment, thermit welding, protective coating supply & application across ports, shipyards, and industrial railways in India & Middle East.",
+    images: [{ url: "/images/crane_rail.png", width: 1200, height: 630, alt: "INFINI Mechanical Engineering Sector" }],
+  },
+};
 
 export default function MechanicalSectorPage() {
   const services = [

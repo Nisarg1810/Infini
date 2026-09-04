@@ -17,11 +17,60 @@ const inter = Inter({
   display: "swap",
 });
 
+const siteUrl = "https://www.infini-infra.com";
+
 export const metadata: Metadata = {
-  title: "INFINI Infrastructure & Engineering Pvt. Ltd. | Turnkey Engineering",
-  description: "Specialized engineering contractor for Mechanical, Civil Construction, Marine Floating Docks, Crane Rails, and Metguard Anti-Corrosion Coating.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "INFINI Infrastructure & Engineering Pvt. Ltd. | Turnkey Engineering Contractor",
+    template: "%s | INFINI Infrastructure & Engineering",
+  },
+  description:
+    "Specialized turnkey engineering contractor in Mumbai specializing in Mechanical, Civil Construction, Marine Floating Docks & Jetties, Crane Rail Fixtures, RDSO Thermit Welding, and Metguard Anti-Corrosion Coating across India & Middle East.",
+  keywords: [
+    "turnkey engineering contractor Mumbai",
+    "crane rail fixtures installation",
+    "floating dock jetty supplier India",
+    "RDSO thermit welding contractor",
+    "Metguard anti-corrosion coating",
+    "marine infrastructure contractor",
+    "civil jetty construction Mumbai",
+    "seaplane platform India",
+    "port engineering services",
+    "INFINI Infrastructure Engineering",
+  ],
+  authors: [{ name: "INFINI Infrastructure & Engineering Pvt. Ltd.", url: siteUrl }],
+  creator: "INFINI Infrastructure & Engineering Pvt. Ltd.",
+  publisher: "INFINI Infrastructure & Engineering Pvt. Ltd.",
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: siteUrl,
+    siteName: "INFINI Infrastructure & Engineering",
+    title: "INFINI Infrastructure & Engineering Pvt. Ltd. | Turnkey Engineering Contractor",
+    description:
+      "Specialized turnkey engineering contractor in Mumbai — Crane Rails, Floating Docks, RDSO Welding, Metguard Coating & Civil Infrastructure across India & Middle East.",
+    images: [
+      {
+        url: "/images/hero_bg.png",
+        width: 1200,
+        height: 630,
+        alt: "INFINI Infrastructure & Engineering – Marine & Civil Contractor Mumbai",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "INFINI Infrastructure & Engineering Pvt. Ltd.",
+    description:
+      "Specialized turnkey engineering contractor — Crane Rails, Floating Docks, RDSO Welding & Metguard Coating across India & Middle East.",
+    images: ["/images/hero_bg.png"],
+  },
   icons: {
     icon: "/images/logo.jpg",
+    shortcut: "/images/logo.jpg",
+    apple: "/images/logo.jpg",
   },
 };
 
@@ -37,33 +86,42 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
 
-        {/* FLOATING WHATSAPP BUTTON WITH SPEECH BUBBLE */}
-        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
-          
-          {/* Speech bubble tooltip */}
-          <a
-            href="https://wa.me/919920350663?text=Hello%20INFINI%20Infrastructure%2C%20I%20would%20like%20to%20inquire%20about%20your%20engineering%20services."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 group"
-            aria-label="Chat with INFINI Infrastructure on WhatsApp"
-          >
-            {/* Bubble label */}
-            <div className="relative bg-white text-slate-700 text-sm font-medium px-4 py-2.5 rounded-2xl shadow-lg border border-slate-100 whitespace-nowrap">
-              Need Help? <span className="font-bold text-slate-900">Chat with us</span>
-              {/* Tail pointing right */}
-              <span className="absolute right-[-8px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-l-[8px] border-l-white" />
-            </div>
+        {/* ─── FLOATING WHATSAPP BUTTON ─── */}
+        <a
+          href="https://wa.me/919920350663?text=Hello%20INFINI%20Infrastructure%2C%20I%20would%20like%20to%20inquire%20about%20your%20engineering%20services."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-6 right-6 z-50 flex items-center gap-3 group"
+          aria-label="Chat with INFINI Infrastructure on WhatsApp"
+        >
+          {/* Speech Bubble — hidden by default, shown on hover */}
+          <div className="
+            relative bg-white text-slate-800 text-xs font-medium px-4 py-2.5 rounded-2xl
+            shadow-xl border border-slate-100 whitespace-nowrap
+            opacity-0 translate-x-2 pointer-events-none
+            group-hover:opacity-100 group-hover:translate-x-0
+            transition-all duration-300 ease-out
+          ">
+            💬 Chat on <span className="font-bold text-[#25D366]">WhatsApp</span>
+            <span className="absolute right-[-7px] top-1/2 -translate-y-1/2 w-0 h-0
+              border-t-[7px] border-t-transparent
+              border-b-[7px] border-b-transparent
+              border-l-[7px] border-l-white" />
+          </div>
 
-            {/* WhatsApp circle button */}
-            <div className="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-300 ring-4 ring-[#25D366]/30 shrink-0">
-              <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
-                <path d="M12.031 2c-5.514 0-9.997 4.483-9.997 9.997 0 1.764.459 3.491 1.332 5.006l-1.366 4.997 5.116-1.342c1.46.797 3.111 1.218 4.792 1.218 5.514 0 9.996-4.483 9.996-9.997 0-5.514-4.482-9.997-9.996-9.997zm5.834 14.161c-.244.688-1.428 1.312-1.986 1.366-.523.051-1.205.075-3.486-.867-2.917-1.206-4.79-4.174-4.935-4.368-.145-.195-1.183-1.573-1.183-2.999 0-1.426.748-2.128 1.014-2.418.266-.29.58-.363.774-.363.194 0 .387.002.557.01.182.008.425-.069.664.507.244.588.826 2.016.898 2.161.073.146.121.316.024.511-.097.195-.146.316-.29.486-.146.17-.306.38-.437.51-.146.146-.299.305-.129.596.17.291.758 1.25 1.626 2.023 1.116.994 2.059 1.303 2.35 1.448.291.146.461.122.631-.073.17-.195.728-.849.922-1.14.195-.291.388-.243.655-.146.267.097 1.699.801 1.99.946.291.146.486.219.558.34.073.122.073.704-.171 1.392z"/>
+          {/* Button */}
+          <div className="relative w-14 h-14 shrink-0">
+            {/* Pulse ring */}
+            <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping" />
+            {/* Main button */}
+            <div className="relative w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
+              <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M11.998 2.003c-5.514 0-9.995 4.48-9.995 9.994 0 1.762.459 3.487 1.331 4.999l-1.33 4.862 4.987-1.308a9.963 9.963 0 004.664 1.16h.004c5.514 0 9.994-4.481 9.994-9.994 0-5.514-4.48-9.994-9.994-9.994l-.661.281zm0 18.307h-.003a8.289 8.289 0 01-4.224-1.157l-.303-.18-3.14.823.838-3.062-.197-.314a8.273 8.273 0 01-1.268-4.416c0-4.576 3.726-8.302 8.302-8.302 4.575 0 8.302 3.726 8.302 8.302 0 4.575-3.727 8.302-8.302 8.302l-.005.004z"/>
               </svg>
             </div>
-          </a>
-
-        </div>
+          </div>
+        </a>
 
       </body>
     </html>

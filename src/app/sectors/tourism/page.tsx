@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Ship, Anchor, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Tourism & Marine Sector",
+  description:
+    "INFINI Infrastructure supplies and installs modular floating pontoon docks, seaplane landing platforms, marine jetties, and offers marine equipment leasing services for coastal tourism and defense projects across India.",
+  openGraph: {
+    title: "Tourism & Marine Sector | INFINI Infrastructure & Engineering",
+    description:
+      "Specialist supplier of floating docks, jetties, and seaplane platforms for coastal tourism, passenger terminals, naval defense installations, and marine infrastructure.",
+    images: [{ url: "/images/marine_jetty.png", width: 1200, height: 630, alt: "INFINI Tourism Marine Sector Floating Docks" }],
+  },
+};
 
 export default function TourismSectorPage() {
   const services = [

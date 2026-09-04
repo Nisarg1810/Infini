@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Award, ShieldCheck, Users, Clock, CheckCircle2, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Why Choose INFINI Infra",
+  description:
+    "Learn why leading ports, shipyards, and railway authorities choose INFINI Infrastructure & Engineering — qualified technical workforce, RDSO-approved welding, zero-harm safety culture, and 100% on-time project delivery.",
+  openGraph: {
+    title: "Why Choose INFINI Infrastructure & Engineering | Port & Rail Contractor",
+    description:
+      "Experienced promoters, certified engineering teams, strict safety standards, and strategic partnerships make INFINI the preferred turnkey contractor across India & Middle East.",
+    images: [{ url: "/images/hero_bg.png", width: 1200, height: 630, alt: "Why Choose INFINI Infrastructure" }],
+  },
+};
 
 export default function WhyInfiniPage() {
   return (

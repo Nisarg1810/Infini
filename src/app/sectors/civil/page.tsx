@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { HardHat, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Civil Engineering Sector",
+  description:
+    "INFINI Infrastructure's Civil Engineering division delivers jetty construction & repairs, mass concrete works, breakwater positioning, RCC & PCC girders, paver block installation, and drainage infrastructure across Indian ports.",
+  openGraph: {
+    title: "Civil Engineering Sector | INFINI Infrastructure & Engineering",
+    description:
+      "Specialist civil contractor for port jetty works, RCC girders, breakwater concrete positioning, and heavy civil infrastructure at Indian ports and shipyards.",
+    images: [{ url: "/images/civil_bridge.png", width: 1200, height: 630, alt: "INFINI Civil Engineering Sector" }],
+  },
+};
 
 export default function CivilSectorPage() {
   const services = [
