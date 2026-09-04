@@ -161,7 +161,6 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-bold text-[#0B1B4F] hover:text-[#00C2FF] hover:bg-slate-50 transition-all duration-200">
-                <Wrench className="w-3.5 h-3.5 text-[#00C2FF]" />
                 MECHANICAL
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === "mechanical" ? "rotate-180" : ""}`} />
               </button>
@@ -187,7 +186,6 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-bold text-[#0B1B4F] hover:text-[#22C55E] hover:bg-slate-50 transition-all duration-200">
-                <HardHat className="w-3.5 h-3.5 text-[#22C55E]" />
                 CIVIL
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === "civil" ? "rotate-180" : ""}`} />
               </button>
@@ -213,7 +211,6 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-bold text-[#0B1B4F] hover:text-[#F97316] hover:bg-slate-50 transition-all duration-200">
-                <Ship className="w-3.5 h-3.5 text-[#F97316]" />
                 TOURISM
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === "tourism" ? "rotate-180" : ""}`} />
               </button>
@@ -315,7 +312,7 @@ export default function Navbar() {
                 onClick={() => setMobileExpanded(mobileExpanded === "mechanical" ? null : "mechanical")}
                 className="flex items-center justify-between w-full px-3 py-3 text-sm font-bold text-[#0B1B4F]"
               >
-                <span className="flex items-center gap-2"><Wrench className="w-4 h-4 text-[#00C2FF]" /> MECHANICAL</span>
+                <span>MECHANICAL</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "mechanical" ? "rotate-180" : ""}`} />
               </button>
               {mobileExpanded === "mechanical" && (
@@ -340,7 +337,7 @@ export default function Navbar() {
                 onClick={() => setMobileExpanded(mobileExpanded === "civil" ? null : "civil")}
                 className="flex items-center justify-between w-full px-3 py-3 text-sm font-bold text-[#0B1B4F]"
               >
-                <span className="flex items-center gap-2"><HardHat className="w-4 h-4 text-[#22C55E]" /> CIVIL</span>
+                <span>CIVIL</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "civil" ? "rotate-180" : ""}`} />
               </button>
               {mobileExpanded === "civil" && (
@@ -365,7 +362,7 @@ export default function Navbar() {
                 onClick={() => setMobileExpanded(mobileExpanded === "tourism" ? null : "tourism")}
                 className="flex items-center justify-between w-full px-3 py-3 text-sm font-bold text-[#0B1B4F]"
               >
-                <span className="flex items-center gap-2"><Ship className="w-4 h-4 text-[#F97316]" /> TOURISM</span>
+                <span>TOURISM</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "tourism" ? "rotate-180" : ""}`} />
               </button>
               {mobileExpanded === "tourism" && (
