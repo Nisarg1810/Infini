@@ -90,7 +90,7 @@ export default function CareerPage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto space-y-4">
+        <div className="relative z-10 max-w-6xl mx-auto space-y-4">
           <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C2FF]/15 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
             <Users className="w-3.5 h-3.5" />
@@ -106,7 +106,7 @@ export default function CareerPage() {
       </section>
 
       {/* Main Career Content & Open Positions */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         {/* Left Column: Why Join & Open Roles */}
         <div className="lg:col-span-7 space-y-8">

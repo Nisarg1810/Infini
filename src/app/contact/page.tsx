@@ -132,7 +132,7 @@ export default function ContactPage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto space-y-4">
+        <div className="relative z-10 max-w-6xl mx-auto space-y-4">
           <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C2FF]/15 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
             <Mail className="w-3.5 h-3.5" />
@@ -164,7 +164,7 @@ export default function ContactPage() {
       </section>
 
       {/* ─── MAIN CONTACT SECTION (INFO + FORM) ─── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           {/* Left Column: Direct Contact Info */}
@@ -377,7 +377,7 @@ export default function ContactPage() {
       </section>
 
       {/* ─── LIVE LOCATION MAP SECTION ─── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#0B1B4F] text-white rounded-3xl p-5 sm:p-8 border border-slate-800 space-y-4 shadow-xl relative overflow-hidden">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>

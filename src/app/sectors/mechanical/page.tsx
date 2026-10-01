@@ -67,7 +67,7 @@ export default function MechanicalSectorPage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto space-y-4">
+        <div className="relative z-10 max-w-6xl mx-auto space-y-4">
           <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C2FF]/15 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
             <Wrench className="w-3.5 h-3.5" />
@@ -82,7 +82,7 @@ export default function MechanicalSectorPage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((item) => (
             <div key={item.id} id={item.id} className="glass-card-interactive p-8 rounded-3xl space-y-4 border-l-4 border-l-[#00C2FF] group">

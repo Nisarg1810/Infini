@@ -111,6 +111,7 @@ export default function HomePage() {
       badge: "TOURISM & MARINE SECTOR",
       badgeColor: "bg-amber-500/20 border-amber-400/50 text-amber-300",
       bgImage: "/images/hero_bg.png",
+      bgVideo: "/videos/marine_bg.mp4",
       ctaText: "Floating Docks",
       ctaLink: "/sectors/tourism/floating-docks-jetties",
     },
@@ -126,13 +127,13 @@ export default function HomePage() {
     },
     {
       id: 2,
-      title: "Civil Construction, RCC Girders & Breakwater Jetties",
-      subtitle: "Mass concrete foundations, pre-cast RCC girders, paver block yards and jetty rehabilitation works.",
+      title: "Civil Construction, Bridge Girders & Building Works",
+      subtitle: "Pre-cast post-tensioned RCC bridge girders, multi-storey structural building works, mass concrete foundations and jetty infrastructure.",
       badge: "CIVIL SECTOR",
       badgeColor: "bg-emerald-400/20 border-emerald-400/50 text-emerald-300",
-      bgImage: "/images/civil_bridge.png",
+      bgImage: "/images/civil/rcc_bridge_girders_hd.jpg",
       ctaText: "Civil Construction",
-      ctaLink: "/sectors/civil/jetty-works-repairs",
+      ctaLink: "/sectors/civil",
     },
     {
       id: 3,
@@ -149,7 +150,7 @@ export default function HomePage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 6000);
+    }, 7000);
     return () => clearInterval(interval);
   }, [heroSlides.length]);
 
@@ -157,40 +158,68 @@ export default function HomePage() {
     <div className="bg-white">
 
       {/* ─── HERO ─── */}
-      <section className="relative w-full overflow-hidden min-h-[520px] h-[85vh] sm:h-[90vh]">
+      <section className="relative w-full overflow-hidden min-h-[560px] h-[88vh] sm:h-[92vh]">
 
         {heroSlides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ${index === activeSlide ? "opacity-100" : "opacity-0 pointer-events-none"
-              }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === activeSlide ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
           >
-            <Image src={slide.bgImage} alt={slide.title} fill className="object-cover object-center" priority={index === 0} />
-            <div className="absolute inset-0 bg-black/60 sm:bg-black/55" />
+            {slide.bgVideo ? (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                poster={slide.bgImage}
+                className="w-full h-full object-cover object-center"
+              >
+                <source src={slide.bgVideo} type="video/mp4" />
+              </video>
+            ) : (
+              <Image 
+                src={slide.bgImage} 
+                alt={slide.title} 
+                fill 
+                className="object-cover object-center" 
+                priority={index === 0} 
+              />
+            )}
+            {/* Clean Cinematic Marine Gradient Overlay (inspired by WCM) */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F] via-[#0B1B4F]/40 to-black/60 pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(11,27,79,0.4)_100%)] pointer-events-none" />
           </div>
         ))}
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 sm:px-8 z-10 py-12">
-          <span className={`inline-block px-4 py-1.5 rounded-full border text-xs sm:text-xs font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-sm backdrop-blur-md ${heroSlides[activeSlide].badgeColor}`}>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] sm:text-xs font-semibold text-white/95 mb-4 tracking-wider uppercase shadow-md">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00C2FF] animate-pulse" />
+            Turnkey Marine, Civil &amp; Mechanical Engineering
+          </div>
+
+          <span className={`inline-block px-4 py-1.5 rounded-full border text-[11px] sm:text-xs font-extrabold uppercase tracking-widest mb-4 sm:mb-5 shadow-sm backdrop-blur-md ${heroSlides[activeSlide].badgeColor}`}>
             {heroSlides[activeSlide].badge}
           </span>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight max-w-4xl mb-4 sm:mb-6 drop-shadow-lg tracking-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight max-w-4xl mb-4 sm:mb-6 drop-shadow-xl tracking-tight">
             {heroSlides[activeSlide].title}
           </h1>
-          <p className="text-sm sm:text-lg lg:text-xl text-white/90 max-w-2xl mb-8 sm:mb-10 leading-relaxed font-normal px-2 drop-shadow">
+          <p className="text-sm sm:text-lg lg:text-xl text-slate-200 max-w-2xl mb-8 sm:mb-10 leading-relaxed font-light px-2 drop-shadow">
             {heroSlides[activeSlide].subtitle}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
             <Link
               href={heroSlides[activeSlide].ctaLink}
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#00C2FF] text-[#0B1B4F] font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:shadow-xl transition-all duration-300 gap-2 shadow-lg"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#00C2FF] text-[#0B1B4F] font-black uppercase tracking-wider px-8 py-3.5 rounded-full text-xs sm:text-sm hover:bg-white hover:text-[#0B1B4F] hover:shadow-2xl transition-all duration-300 gap-2 shadow-xl"
             >
               {heroSlides[activeSlide].ctaText} <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center border-2 border-white/80 text-white font-bold px-8 py-3.5 rounded-full text-sm sm:text-base hover:bg-white hover:text-[#0B1B4F] transition-all duration-300 text-center shadow-lg"
+              className="w-full sm:w-auto inline-flex items-center justify-center border-2 border-white/70 hover:border-white text-white font-extrabold uppercase tracking-wider px-8 py-3.5 rounded-full text-xs sm:text-sm hover:bg-white/20 backdrop-blur-sm transition-all duration-300 text-center shadow-lg"
             >
               Contact Us
             </Link>
@@ -319,18 +348,19 @@ export default function HomePage() {
             <div className="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between hover:border-emerald-500 hover:-translate-y-1.5 transition-all duration-300">
               <div>
                 <div className="relative h-48 overflow-hidden">
-                  <Image src="/images/civil_bridge.png" alt="Civil Sector" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src="/images/civil/rcc_bridge_girders_hd.jpg" alt="Civil Engineering & Bridge Girders" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/85 to-transparent" />
-                  <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Civil</span>
+                  <span className="absolute bottom-3 left-4 text-white font-bold text-lg">Civil Infrastructure</span>
                 </div>
                 <div className="p-5">
                   <ul className="space-y-2 text-sm text-slate-600">
                     {[
+                      { label: "RCC & PCC Girders", href: "/sectors/civil/rcc-pcc-girders" },
+                      { label: "Building Works & RCC Framing", href: "/sectors/civil/building-works" },
                       { label: "Jetty Works & Repairs", href: "/sectors/civil/jetty-works-repairs" },
+                      { label: "Mass Concrete Works", href: "/sectors/civil/mass-concrete-works" },
                       { label: "Paver Block Works", href: "/sectors/civil/paver-block-works" },
                       { label: "Drainage Works", href: "/sectors/civil/drainage-works" },
-                      { label: "Mass Concrete Works", href: "/sectors/civil/mass-concrete-works" },
-                      { label: "RCC & PCC Girders", href: "/sectors/civil/rcc-pcc-girders" },
                     ].map((s) => (
                       <li key={s.href}>
                         <Link href={s.href} className="flex items-center gap-2 hover:text-emerald-500 transition-colors group/item">

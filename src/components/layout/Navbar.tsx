@@ -29,10 +29,11 @@ const mechanicalLinks = [
 
 const civilLinks = [
   { label: "Jetty Works & Repairs", href: "/sectors/civil/jetty-works-repairs" },
+  { label: "RCC & PCC Girders", href: "/sectors/civil/rcc-pcc-girders" },
+  { label: "Building Works & RCC Framing", href: "/sectors/civil/building-works" },
+  { label: "Mass Concrete Works", href: "/sectors/civil/mass-concrete-works" },
   { label: "Paver Block Works", href: "/sectors/civil/paver-block-works" },
   { label: "Drainage Works", href: "/sectors/civil/drainage-works" },
-  { label: "Mass Concrete Works", href: "/sectors/civil/mass-concrete-works" },
-  { label: "RCC & PCC Girders", href: "/sectors/civil/rcc-pcc-girders" },
 ];
 
 const tourismLinks = [

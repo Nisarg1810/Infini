@@ -132,7 +132,7 @@ export default function MediaNewsPage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto space-y-4">
+        <div className="relative z-10 max-w-6xl mx-auto space-y-4">
           <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C2FF]/15 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
             <Newspaper className="w-3.5 h-3.5" />
@@ -148,7 +148,7 @@ export default function MediaNewsPage() {
       </section>
 
       {/* ─── CERTIFICATIONS & ACCREDITATIONS ─── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div>
           <span className="section-badge mb-3">Accreditations &amp; Approvals</span>
           <h2 className="section-heading text-2xl sm:text-3xl mb-3">Official Certifications</h2>
@@ -196,7 +196,7 @@ export default function MediaNewsPage() {
       </section>
 
       {/* ─── NEWS GRID ─── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div>
           <span className="section-badge mb-3">Latest Updates</span>
           <h2 className="section-heading text-2xl sm:text-3xl">Corporate News &amp; Project Updates</h2>
@@ -237,7 +237,7 @@ export default function MediaNewsPage() {
       </section>
 
       {/* ─── PRESS & MEDIA INQUIRY ─── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="glass-card p-8 rounded-3xl border border-slate-200 hover:border-[#00C2FF]/40 transition-all duration-300">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div className="space-y-2 max-w-xl">

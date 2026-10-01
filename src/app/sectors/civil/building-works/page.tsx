@@ -2,51 +2,51 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumb from "@/components/ui/Breadcrumb";
-import { HardHat, CheckCircle2, ArrowRight, ShieldCheck, Cpu, Layers, Ruler, Activity, Anchor, Sparkles } from "lucide-react";
+import { HardHat, CheckCircle2, ArrowRight, Building2, ShieldCheck, Layers, Hammer, Ruler, Activity, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "RCC & PCC Girders for Bridges | Precast PSC I-Girder Fabrication & Launching | INFINI",
+  title: "Building Works & RCC Structural Construction | INFINI Infrastructure",
   description:
-    "INFINI delivers high-precision precast and cast-in-place post-tensioned RCC & PCC girders for highway flyovers, rail bridges, and heavy viaducts across India.",
+    "INFINI executes turnkey commercial, industrial, and institutional building construction: multi-storey RCC framed structures, boom pump slab casting, formwork engineering, and AAC block masonry.",
   openGraph: {
-    title: "RCC & PCC Girders for Bridges | INFINI Infrastructure",
+    title: "Building Works & RCC Structural Construction | INFINI Infrastructure",
     description:
-      "Prestressed concrete (PSC) I-girders, casting bed management, post-tensioning duct profiling, and heavy launcher erection.",
-    images: [{ url: "/images/civil/rcc_bridge_girders_hd.jpg", width: 1200, height: 630, alt: "RCC Bridge Girders" }],
+      "Commercial building construction, reinforced concrete frame casting, boom pump roof slab concreting, and high-performance masonry works.",
+    images: [{ url: "/images/civil/building_rcc_frame_hd.jpg", width: 1200, height: 630, alt: "Building Works & RCC Construction" }],
   },
 };
 
-export default function RCCPCCGirdersPage() {
+export default function BuildingWorksPage() {
   const sitePhotos = [
     {
-      src: "/images/civil/civil_site_01.jpg",
-      title: "Precast Girder Casting Yard",
-      caption: "Aligned post-tensioned I-girders on casting beds with top shear connector rebar loops and site machinery."
+      src: "/images/civil/civil_site_15.jpg",
+      title: "Boom Pump Slab Concreting",
+      caption: "Ready-mix concrete delivery via mechanical boom pump hose with immersion needle compaction on slab mesh."
     },
     {
-      src: "/images/civil/civil_site_11.jpg",
-      title: "PSC Tendon Ducts & Burst Rings",
-      caption: "Longitudinal rebar cage with corrugated HDPE post-tensioning ducts and end-block spiral burst reinforcement."
+      src: "/images/civil/civil_site_16.jpg",
+      title: "Slab Shuttering & Rebar Mesh",
+      caption: "High-density bottom and top rebar reinforcement grids laid over film-faced shuttering plywood."
     },
     {
-      src: "/images/civil/civil_site_03.jpg",
-      title: "Top Flange Shear Stirrups",
-      caption: "Exposed shear connector loops for deck slab monolithic bonding alongside burlap curing sheets."
+      src: "/images/civil/civil_site_14.jpg",
+      title: "Column & Beam Formwork",
+      caption: "Upper-level column scaffolding, heavy wooden batten beam formwork, and reinforcement dowels."
     },
     {
-      src: "/images/civil/civil_site_04.jpg",
-      title: "Formwork & Cover Block Assembly",
-      caption: "High-rigidity end shuttering with cover blocks and precise duct profiling."
+      src: "/images/civil/civil_site_20.jpg",
+      title: "Multi-Storey RCC Frame Structure",
+      caption: "Monolithic concrete columns, integrated staircase tower, AAC block masonry, and column starter rebars."
     },
     {
-      src: "/images/civil/civil_site_06.jpg",
-      title: "Girder Curing & RE Retaining Wall",
-      caption: "Wet burlap hessian curing blankets along girder webs adjoining reinforced earth bridge approach walls."
+      src: "/images/civil/civil_site_23.jpg",
+      title: "High-Ceiling Hall Interior",
+      caption: "Structural concrete columns, overhead roof beams, and precision blockwork with grand arched portals."
     },
     {
-      src: "/images/civil/civil_site_09.jpg",
-      title: "Finished Multi-Girder Lineup",
-      caption: "Completed high-grade precast girders ready for tensioning, bearing placement, and erection."
+      src: "/images/civil/civil_site_17.jpg",
+      title: "Retaining Wall & Formwork Props",
+      caption: "Reinforced concrete retaining wall casting with rebar dowels and heavy timber shuttering support props."
     },
   ];
 
@@ -71,14 +71,14 @@ export default function RCCPCCGirdersPage() {
         <div className="relative z-10 max-w-6xl mx-auto space-y-4">
           <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C2FF]/15 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-            <HardHat className="w-3.5 h-3.5" />
-            CIVIL INFRASTRUCTURE &bull; BRIDGES &amp; FLYOVERS
+            <Building2 className="w-3.5 h-3.5" />
+            CIVIL INFRASTRUCTURE &bull; STRUCTURAL BUILDINGS
           </div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            RCC &amp; PCC <span className="text-[#00C2FF]">Girders for Bridges</span>
+            Building Works &amp; <span className="text-[#00C2FF]">RCC Structural Framing</span>
           </h1>
           <p className="text-slate-300 text-base sm:text-lg lg:text-xl max-w-3xl leading-relaxed font-light">
-            Turnkey fabrication of pre-cast and cast-in-place Prestressed Concrete (PSC) and Reinforced Cement Concrete (RCC) I-girders, box girders, and heavy structural spans.
+            Turnkey commercial, institutional, and industrial building construction: multi-storey RCC frame casting, boom pump slab pours, and precision AAC block masonry.
           </p>
         </div>
       </section>
@@ -90,8 +90,8 @@ export default function RCCPCCGirdersPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="group relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 aspect-[16/10]">
             <Image 
-              src="/images/civil/rcc_bridge_girders_hd.jpg" 
-              alt="RCC Bridge Girders Casting Yard" 
+              src="/images/civil/building_rcc_frame_hd.jpg" 
+              alt="Multi-Storey RCC Building Frame & AAC Masonry" 
               fill 
               className="object-cover group-hover:scale-105 transition-transform duration-700" 
               priority
@@ -99,36 +99,36 @@ export default function RCCPCCGirdersPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/90 via-transparent to-transparent" />
             <div className="absolute top-4 left-4 flex gap-2">
               <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#00C2FF] text-[#0B1B4F]">
-                Site Fabrication Yard
+                RCC Framework
               </span>
             </div>
             <div className="absolute bottom-5 left-5 right-5 text-white space-y-1">
-              <span className="text-[11px] font-bold text-[#00C2FF] uppercase tracking-wider">High-Capacity Casting Bed</span>
-              <h3 className="text-lg sm:text-xl font-bold">Precast Post-Tensioned Bridge Girders</h3>
+              <span className="text-[11px] font-bold text-[#00C2FF] uppercase tracking-wider">Multi-Storey Structural Frame</span>
+              <h3 className="text-lg sm:text-xl font-bold">Monolithic Columns &amp; AAC Block Masonry</h3>
               <p className="text-xs sm:text-sm text-slate-300 line-clamp-2">
-                Precision cast I-girders with protruding shear connector stirrups, burlap hydration covers, and sub-structure pier integration.
+                Heavy concrete columns, cantilever beams, casting of central staircase shear walls, and perimeter scaffolding.
               </p>
             </div>
           </div>
 
           <div className="group relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 aspect-[16/10]">
             <Image 
-              src="/images/civil/girder_rebar_cage_hd.jpg" 
-              alt="Girder Reinforcement Cage & Ducts" 
+              src="/images/civil/building_slab_pour_hd.jpg" 
+              alt="Roof Slab Concreting via Mechanical Boom Placer Pump" 
               fill 
               className="object-cover group-hover:scale-105 transition-transform duration-700" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B4F]/90 via-transparent to-transparent" />
             <div className="absolute top-4 left-4 flex gap-2">
               <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500 text-white">
-                Rebar Detailing
+                Slab Pour Execution
               </span>
             </div>
             <div className="absolute bottom-5 left-5 right-5 text-white space-y-1">
-              <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">Reinforcement Engineering</span>
-              <h3 className="text-lg sm:text-xl font-bold">PSC Rebar Cage &amp; Corrugated Ducts</h3>
+              <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">High-Velocity RMC Placement</span>
+              <h3 className="text-lg sm:text-xl font-bold">Boom Pump Roof Slab Concreting</h3>
               <p className="text-xs sm:text-sm text-slate-300 line-clamp-2">
-                Spiral burst reinforcement rings, corrugated HDPE post-tensioning sheath alignment, and high-precision cover blocks.
+                Continuous ready-mix concrete placement with high-frequency immersion vibrator compaction and laser screed level finishing.
               </p>
             </div>
           </div>
@@ -137,10 +137,10 @@ export default function RCCPCCGirdersPage() {
         {/* ─── OVERVIEW STATEMENT ─── */}
         <div className="space-y-4">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1B4F]">
-            Turnkey Heavy Structural Span Engineering
+            Turnkey Civil General Contracting for Modern Buildings
           </h2>
           <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
-            INFINI Infrastructure specializes in the complete lifecycle execution of prestressed concrete (PSC) bridge girders for National Highways, state flyovers, railway overbridges (ROBs), and river crossings. From on-site casting yard design and high-grade M45/M50 ready-mix concrete batching to multi-strand hydraulic post-tensioning and metallic launcher erection, we ensure zero deflection deviation and high durability.
+            INFINI Infrastructure delivers end-to-end civil construction for commercial complexes, industrial administration headquarters, port offices, and institutional buildings. We handle everything from deep foundation excavation and raft footing casting to monolithic column formwork, high-velocity concrete boom pumping, and precision AAC block masonry walls.
           </p>
         </div>
 
@@ -149,10 +149,10 @@ export default function RCCPCCGirdersPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-4">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">Real Project Documentation</span>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-[#0B1B4F]">On-Site Execution &amp; Work Progress</h3>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-[#0B1B4F]">On-Site Building Construction Progress</h3>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 max-w-md">
-              Photographs from our actual highway flyover casting yards and bridge girder erection corridors.
+              Photographs from our live building projects documenting slab pours, rebar inspections, and structural masonry.
             </p>
           </div>
 
@@ -189,17 +189,17 @@ export default function RCCPCCGirdersPage() {
         <div className="space-y-6">
           <h3 className="text-xl sm:text-2xl font-bold text-[#0B1B4F] flex items-center gap-2.5">
             <Layers className="w-5 h-5 text-[#00C2FF]" />
-            Specialized Bridge Girder Engineering Capabilities
+            Core Building Construction Capabilities
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="glass-card p-7 rounded-2xl space-y-3 border-l-4 border-l-[#00C2FF] shadow-sm hover:shadow-md transition-shadow">
               <div className="w-10 h-10 rounded-xl bg-[#00C2FF]/10 text-[#00C2FF] flex items-center justify-center font-bold">
-                <Layers className="w-5 h-5" />
+                <Building2 className="w-5 h-5" />
               </div>
-              <h4 className="font-bold text-lg sm:text-xl text-[#0B1B4F]">Post-Tensioned Tendon Profiling</h4>
+              <h4 className="font-bold text-lg sm:text-xl text-[#0B1B4F]">Monolithic RCC Framing</h4>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Parabolic cable profiling using low-relaxation 7-ply high-tensile steel strands (12.7 mm / 15.2 mm), corrugated HDPE ducts, and multi-strand anchorage cones.
+                Design and casting of heavy column grids, grade beams, post-tensioned floor slabs, and integrated shear walls engineered for seismic zone IV and V compliance.
               </p>
             </div>
 
@@ -207,55 +207,31 @@ export default function RCCPCCGirdersPage() {
               <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold">
                 <Activity className="w-5 h-5" />
               </div>
-              <h4 className="font-bold text-lg sm:text-xl text-[#0B1B4F]">Thermal Curing &amp; Hydration Control</h4>
+              <h4 className="font-bold text-lg sm:text-xl text-[#0B1B4F]">Boom Pump Concrete Delivery</h4>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Wet burlap/hessian saturated blankets wrapped around girder webs with automated sprinkler manifolds, ensuring crack-free thermal hydration control.
+                Deployment of 36m to 42m mobile boom placers for rapid, uninterrupted pours of up to 400 m³ per shift, eliminating cold joints and ensuring monolithic bond.
               </p>
             </div>
 
             <div className="glass-card p-7 rounded-2xl space-y-3 border-l-4 border-l-indigo-500 shadow-sm hover:shadow-md transition-shadow">
               <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center font-bold">
-                <Ruler className="w-5 h-5" />
+                <Hammer className="w-5 h-5" />
               </div>
-              <h4 className="font-bold text-lg sm:text-xl text-[#0B1B4F]">Top Flange Shear Connectors</h4>
+              <h4 className="font-bold text-lg sm:text-xl text-[#0B1B4F]">Precision AAC Block Masonry</h4>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                High-yield rebar stirrups protruding from the top flange for 100% composite action and monolithic bonding with cast-in-place bridge deck slabs.
+                High-thermal-insulation Autoclaved Aerated Concrete (AAC) blocks laid with polymer-modified thin-bed mortar, providing plumb, crack-resistant portal and partition walls.
               </p>
             </div>
 
             <div className="glass-card p-7 rounded-2xl space-y-3 border-l-4 border-l-teal-500 shadow-sm hover:shadow-md transition-shadow">
               <div className="w-10 h-10 rounded-xl bg-teal-500/10 text-teal-600 flex items-center justify-center font-bold">
-                <Anchor className="w-5 h-5" />
+                <Ruler className="w-5 h-5" />
               </div>
-              <h4 className="font-bold text-lg sm:text-xl text-[#0B1B4F]">Launcher Erection &amp; Seating</h4>
+              <h4 className="font-bold text-lg sm:text-xl text-[#0B1B4F]">Engineered Formwork Systems</h4>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Girder transport via hydraulic modular trailers, gantry crane yard handling, metallic truss launching, and precision elastomeric bearing seating on pier caps.
+                Film-faced shuttering plywood, cuplock staging systems, telescopic steel props, and tie-rod column boxes ensuring fair-faced concrete finish with zero bulging.
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* ─── WORKFLOW PROCESS ─── */}
-        <div className="bg-slate-50 border border-slate-200/80 rounded-3xl p-8 sm:p-10 space-y-8">
-          <div className="space-y-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">Methodology</span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0B1B4F]">Girder Fabrication &amp; Erection Lifecycle</h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            {[
-              { step: "01", title: "Bed Alignment", desc: "Rigid casting bed setup, leveling, and base plate positioning." },
-              { step: "02", title: "Rebar & Ducts", desc: "Tying steel cage, profile HDPE tendon ducts, and cover blocks." },
-              { step: "03", title: "Concreting", desc: "High-grade concrete pour with synchronized immersion & shutter vibration." },
-              { step: "04", title: "Post-Tensioning", desc: "Hydraulic multi-strand stressing, elongation verification, & non-shrink grouting." },
-              { step: "05", title: "Launcher Erection", desc: "Trailer transport, gantry pick, truss launching, & bearing seating on pier caps." },
-            ].map((s) => (
-              <div key={s.step} className="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm space-y-2">
-                <span className="text-2xl font-black text-[#00C2FF]">{s.step}</span>
-                <h5 className="font-bold text-sm sm:text-base text-[#0B1B4F]">{s.title}</h5>
-                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
 
@@ -265,17 +241,17 @@ export default function RCCPCCGirdersPage() {
             <div className="space-y-3 text-center lg:text-left max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00C2FF]/20 text-[#00C2FF] text-xs font-bold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" />
-                Bridge Engineering Team
+                Civil General Contractor
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                Request a Bridge Girder Fabrication &amp; Erection Estimate
+                Request a Commercial Building Construction Proposal
               </h3>
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Connect directly with our bridge civil structural team for casting bed sizing, tendon stressing calculations, and heavy crane launching estimates.
+                Submit architectural blueprints, structural drawings, or BOQs to our civil engineering team for turnkey execution schedules and material cost optimization.
               </p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-xs sm:text-sm text-slate-300 font-medium">
-                <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-emerald-400" /> IRC &amp; MoRTH Code Compliant</span>
-                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-[#00C2FF]" /> On-Site Casting Yard Mobilization</span>
+                <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-emerald-400" /> IS 456 &amp; National Building Code (NBC)</span>
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-[#00C2FF]" /> Dedicated Project Managers &amp; QC Engineers</span>
               </div>
             </div>
 
@@ -284,7 +260,7 @@ export default function RCCPCCGirdersPage() {
                 href="/contact"
                 className="bg-[#00C2FF] text-[#0B1B4F] hover:bg-white hover:text-[#0B1B4F] text-center px-8 py-4 rounded-xl text-sm font-black uppercase tracking-wider transition-all duration-300 shadow-xl"
               >
-                Request Girder Estimate →
+                Get Building Estimate →
               </Link>
               <Link
                 href="/sectors/civil"

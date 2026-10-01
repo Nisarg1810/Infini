@@ -36,7 +36,7 @@ export default function VisionMissionPage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto space-y-4">
+        <div className="relative z-10 max-w-6xl mx-auto space-y-4">
           <Breadcrumb />
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C2FF]/15 border border-[#00C2FF]/30 text-[#00C2FF] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
             <Compass className="w-3.5 h-3.5" />
@@ -52,7 +52,7 @@ export default function VisionMissionPage() {
       </section>
 
       {/* Vision & Mission Cards */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {/* OUR VISION */}
@@ -116,7 +116,7 @@ export default function VisionMissionPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#0B1B4F] text-white p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
           <div>
             <h3 className="text-xl font-bold">Explore Why Clients Choose INFINI Infra</h3>

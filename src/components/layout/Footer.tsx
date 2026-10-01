@@ -60,9 +60,9 @@ export default function Footer() {
               {[
                 { label: "Mechanical Sector", href: "/sectors/mechanical" },
                 { label: "Crane Rail Fixtures", href: "/sectors/mechanical/crane-rail-fixtures" },
-                { label: "Anti Corrosion Coating", href: "/sectors/mechanical/anti-corrosion-coating" },
-                { label: "Thermit Rail Welding", href: "/sectors/mechanical/rdso-thermit-welding" },
                 { label: "Civil Construction", href: "/sectors/civil" },
+                { label: "RCC & PCC Girders", href: "/sectors/civil/rcc-pcc-girders" },
+                { label: "Building Works & RCC", href: "/sectors/civil/building-works" },
                 { label: "Floating Docks & Jetties", href: "/sectors/tourism/floating-docks-jetties" },
               ].map((item) => (
                 <li key={item.href}>
